@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#main-box{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.spotify-form-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  width: 30%;
+  min-height: 100vh;
+  background-color: #000000ed;
+  /* background-color: #000000;
+  background-image: linear-gradient(160deg, #000000 0%, #000000 50%, #1ccc5b 100%); */
+  /* background-color: #000000;
+  background-image: linear-gradient(135deg, #000000 0%, #000000 50%, #1ccc5b 100%); */
+  
+
+}
+.spotify-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5vw;
+}
+.ri-spotify-fill{
+    font-size: 4.5vw;
+   color: #1ccc5b;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vw;
+  color: #fff;
+  padding: 0.5vw 0.5vw;
+}
+.spotify-form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 90%;
+   height: 70vh;
+   padding:1.5vw 0;
+}
+.form-section{
+  width: 90%;
+  height: 90%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border: 1px solid #444;
+  padding: 0.5vw 0.5vw;
+}
+.nested-form{
+  width: 100%;
+  padding: 0.5vw 1vw; 
+}
+.nested-form>#username,#email,#name,#password{
+   width: 100%;
+   padding: 1vw 1vw;
+   margin-bottom: 0.5vw;
+   background-color: #000000dd;
+   color: white;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+   border: none;
+   outline: none;
+   border-radius: 10px;
+}
+.gender{
+  width: 100%;
+  padding: 0.5vw 1vw;
+}
+#genderSelect{
+  width: 100%;
+  padding: 1vw 1vw;
+  background-color: #000000dd;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: none;
+   outline: none;
+   border-radius: 10px;
+   color: #fff;
+}
+.button-submit{
+  width: 100%;
+  padding: 1vw 1vw;
+}
+.button{
+  width: 60%;
+  padding: 0.5vw 1vw;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  font-size: 1.5vw;
+  color: #fff;
+ background-color: #1ccc5b;
+ font-weight: 700;
+}
+.termsAndcondition{
+  margin-top: 2vw;
+  width: 90%;
+  padding: 0.5vw 0.5vw;
+}
+.terms,.condition{
+  width: 100%;
+  padding: 0.2vw 0.2vw;
+  font-size: 0.8vw;
+  color: #444;
+}
+.terms span{
+    color: #1ccc5b;
+    cursor: pointer;
+    font-weight: 700;
+}
+.condition span{
+  color: #1ccc5b;
+  cursor: pointer;
+  font-weight: 700;
+}
+.spotify-poster-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #121212;
+  background-image: url("https://www.howtobecomearockstarphotographer.com/wp-content/uploads/2014/08/Nine_Inch_Nails_by_Matthias_Hombauer-4-e1407384673442.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.small_heading{
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  color: #fff;
+}
+.buttonLogin{
+  width: 20%;
+  padding: 0.5vw 1vw;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  background-color: #1ccc5b;
+  font-size: 1.5vw;
+  font-weight: 700;
+  color: #fff;
+}
+/*------------------------------------------LOGIN SECTION-------------------------------------------------------*/
+
