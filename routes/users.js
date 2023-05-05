@@ -11,6 +11,7 @@ var userSchema= mongoose.Schema({
   name:String,
   email:String,
   password:String,
+  gender:String,
 })
 userSchema.plugin(plm);
 module.exports=mongoose.model("user",userSchema);
