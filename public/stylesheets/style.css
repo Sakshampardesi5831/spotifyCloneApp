@@ -287,3 +287,126 @@ html,body{
   background-position: center;
   background-color: #1ccc5b;
 }
+/*----------------------------UPLOADING A SONG CSS--------------------------------------------------------------*/
+.songUploadContainer{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+}
+.songUploadHeading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  /* padding: 1vw 1vw; */
+  /* background-color: blue; */
+}
+.songHeadingBox_1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* padding: 0.5vw 1vw; */
+  /* background-color: red; */
+}
+.songHeadingBox_1>h2{
+  font-size: 2.5vw;
+  color: #fff;
+  font-weight: 700;
+  
+}
+.songHeadingBox_2{
+  padding: 0.5vw 1.5vw;
+  /* background-color: #1ccc5b; */
+}
+.songHeadingBox_2>h1,p{
+  color: #fff;
+  margin-bottom: 0.5vw;
+}
+.songUploadFormSection{
+  display: flex;
+  width: 80%;
+  min-height: 68vh;
+  margin-bottom: 1vw;
+}
+.songUploadFormSection_Box{
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  width: 50%;
+  height: 68vh;
+
+}
+.songUploadFormSection_Box>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.songUploadForm{
+  width: 90%;
+  height: 90%;
+  padding: 0.5vw 1vw;
+}
+.songUploadForm>#songName,#songAlbum,#songArtist{
+  width: 95%;
+  padding: 1.2vw 1vw;
+  background-color: #444;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 0.5vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.songUploadForm>input::placeholder{
+  color: #fff;
+}
+/* .form-control{
+  width: 95% !important;
+  padding: 0.8vw 0.5vw !important;
+  color: white !important;
+  background-color: #444 !important;
+} */
+input[type=file]{
+  margin-bottom: 0.5vw;
+}
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #444;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+input[type=file]::file-selector-button :hover{
+  background: #121212;
+}
+#songPoster,#songFile{
+  width:95%;
+  border-radius: 10px;
+  padding: 0.2vw 0.2vw;
+  border: 1px solid #fff;
+  color: white;
+}
+label{
+  color: white;
+}
+.uploadButton{
+  padding: 0.5vw 3vw;
+  background-color: #1ccc5b;
+  margin-top: 0.5vw;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 20px;
+}
+/*------------------------------DASHBOARD CSS START----------------------------------------------------------------------------------*/

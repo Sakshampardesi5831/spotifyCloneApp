@@ -12,6 +12,10 @@ var userSchema= mongoose.Schema({
   email:String,
   password:String,
   gender:String,
+  uploadFiles:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"music"
+  }]
 })
 userSchema.plugin(plm);
 module.exports=mongoose.model("user",userSchema);

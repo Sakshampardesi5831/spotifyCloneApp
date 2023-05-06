@@ -3,8 +3,8 @@ var multer=require("multer");
 let crypto=require("crypto");
 let path=require("path");
 const gridFsStorage=require("multer-gridfs-storage").GridFsStorage;
-const mongooseURI="mongodb://localhost/audioStream";
-const conn = mongoose.createConnection(mongooseURI, {
+var mongooseUrl="mongodb://localhost/spotifyDb";
+const conn = mongoose.createConnection(mongooseUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -16,7 +16,7 @@ conn.once("open", () => {
   });
 });
 const storage = new gridFsStorage({
-    url: mongooseURI,
+    url: mongooseUrl,
     file: (req, file) => {
       return new Promise((resolve, reject) => {
         crypto.randomBytes(16, (err, buf) => {
