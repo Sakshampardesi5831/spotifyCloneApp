@@ -5,9 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
-    
+    <div class="dashBoardContainer">
+        <div class="dashboardSection1">
+            <div class="dashboardNavContainer">
+
+            </div>
+        </div>
+        <div class="dashboardSection2">
+            <div class="dashBoardSectionsponseredSection">
+
+            </div>
+            <div class="dashboardSongsforYouSection">
+                <div class="viewAllSection">
+                    <h3>Songs for You</h3>
+                    <a href="">view All</a>
+                </div>
+                <div class="dashBoardMusicSection">
+                 <%music.forEach(function(elem){%>
+                    <div class="dashBoardPoster">
+                     <a href="/musicDetails/<%=elem._id%>">
+                        <div class="posterPhoto"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
+                        <div class="songArtistTitle">
+                           <h3><%=elem.songName%></h3>
+                           <h4><%=elem.songArtist%></h4>
+                        </div>
+                     </a>  
+                     </div>
+                 <%})%>    
+                </div>
+            </div>
+            <div class="dashBoardPodcastSection">
+
+            </div>
+        </div>
+        <div class="dashBoardMusicPlayer_Section">
+           <div class="songDetailsSection">
+              <div class="songPhoto"><img src="/audioPosterFile/<%=recent.musicPlayed.songPosterFile[0]%>" alt=""></div>
+              <div class="songDetails">
+                 <h3><%=recent.musicPlayed.songName%></h3>
+                 <h5>SongArtist</h5>   
+              </div>
+              <div class="songLike"><i class="ri-heart-line"></i></div>
+           </div>
+           <div class="playButtonSection">
+            <audio src="/audioPosterFile/<%=recent.musicPlayed.songPosterFile[1]%>" type="audio/mp3"></audio>
+            <div class="playbuttonsHolder">
+                <div class="playBackward">
+                    <button><i class="ri-skip-back-line"></i></button>
+                </div>
+                <div class="playButton">
+                    <button id="playButton" >
+                        <i class="ri-play-fill" id="playIcon"></i>
+                        <i class="ri-pause-mini-line" id="pauseIcon"></i>
+                    </button>
+                </div>
+                <div class="playForword">
+                    <button><i class="ri-skip-forward-line"></i></button>
+                </div>
+            </div>
+             
+              <div class="progress"></div>
+           </div>
+        </div>
+    </div>
+    <script src="../javascripts/script.js"></script>
 </body>
 </html>

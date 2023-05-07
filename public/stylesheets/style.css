@@ -410,3 +410,214 @@ label{
   border-radius: 20px;
 }
 /*------------------------------DASHBOARD CSS START----------------------------------------------------------------------------------*/
+.dashBoardContainer{
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+}
+.dashboardSection1{
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  width: 30%;
+  height: 100vh;
+  border: 2px solid red;
+}
+.dashboardSection2{
+  width: 70%;
+  min-height: 100vh;
+  border: 3px solid blue;
+  overflow-y: auto;
+}
+.dashboardNavContainer{
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  /* border: 3px solid greenyellow; */
+}
+.dashboardSongsforYouSection{
+  width: 100%;
+  min-height: 40vh;
+  /* border: 5px solid pink; */
+}
+.dashBoardSectionsponseredSection{
+  width: 100%;
+  min-height: 40vh;
+  border: 5px solid #fff;
+}
+.viewAllSection{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  /* background-color: red; */
+
+}
+.viewAllSection>a{
+  padding: 0.5vw 1vw;
+  text-decoration: none;
+  color: #6b6969;
+  font-weight: 800;
+}
+.viewAllSection>h3{
+  font-size: 1.5vw;
+  color: #fff;
+}
+.dashBoardMusicSection{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 0.5vw 1vw;
+  border: 3px solid gray;
+}
+.dashBoardPoster{
+   display: flex;
+   /* flex-direction: column; */
+   justify-content: space-around;
+   align-items: center;
+   width: 25%;
+   min-height: 40vh;
+   background-color:#171717 ;
+   border-radius: 15px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.dashBoardPoster>a{
+  width: 80%;
+  padding: 0.2vw 0.2vw;
+  text-decoration: none;
+}
+.posterPhoto{
+  width: 100%;
+  height: 30vh;
+  background-color: #6b6969;
+  border-radius: 15px;
+  margin-bottom: 0.5vw;
+  margin-top: 0.5vw;
+}
+.posterPhoto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+}
+.songArtistTitle{
+  width: 85%;
+}
+.songArtistTitle>h3{
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  margin-bottom: 0.5vw;
+  color: white;
+  font-size: 1.5vw;
+  
+}
+.songArtistTitle>h4{
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  margin-bottom: 0.5vw;
+  color: #d0c9c9;
+}
+.dashBoardPodcastSection{
+  width: 100%;
+  min-height: 40vh;
+  border: 3px solid #fff;
+}
+.dashBoardMusicPlayer_Section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  background-color: #171717;
+  position: fixed;
+  bottom: 0%;
+  left: 0%; 
+}
+#pauseIcon{
+  display: none;
+}
+.songDetailsSection{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  height: 15vh;
+}
+.songPhoto{
+  width: 25%;
+  height: 12vh;
+  border: 2px solid rebeccapurple;
+  border-radius: 10px;
+}
+.songPhoto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.songDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 12vh;
+}
+.songDetails>h3{
+  width: 100%;
+  padding: 0.5vw 1vw;
+  color: white;
+}
+.songDetails>h5{
+  width: 100%;
+  padding: 0.5vw 1vw;
+  color: #7f7a7a;
+}
+.songLike{
+  padding: 0.5vw 0.5vw;
+  color: #fff;
+  font-size: 1.5vw;
+}
+.playButtonSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 15vh;
+  /* border: 2px solid blue; */
+}
+.progress{
+  width: 100%;
+  height: 3px;
+  background-color: #1ccc5b;
+}
+.playButton,.playForword,.playBackward{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.playButton>button,.playForword>button,.playBackward>button{
+  font-size: 1.5vw;
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+.playbuttonsHolder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+}

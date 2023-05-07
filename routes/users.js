@@ -15,7 +15,11 @@ var userSchema= mongoose.Schema({
   uploadFiles:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"music"
-  }]
+  }],
+  recentSong:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"recent"
+  }
 })
 userSchema.plugin(plm);
 module.exports=mongoose.model("user",userSchema);
