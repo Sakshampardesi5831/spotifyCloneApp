@@ -53,22 +53,33 @@
            </div>
            <div class="playButtonSection">
             <audio src="/audioPosterFile/<%=recent.musicPlayed.songPosterFile[1]%>" type="audio/mp3"></audio>
-            <div class="playbuttonsHolder">
-                <div class="playBackward">
-                    <button><i class="ri-skip-back-line"></i></button>
+            <div class="audio_controls_section">
+                <div class="playbuttonsHolder">
+                    <div class="playBackward">
+                        <button><i class="ri-skip-back-line"></i></button>
+                    </div>
+                    <div class="playButton">
+                        <button id="playButton" >
+                            <i class="ri-play-fill" id="playIcon"></i>
+                        </button>
+                    </div>
+                    <div class="playForword">
+                        <button><i class="ri-skip-forward-line"></i></button>
+                    </div>
                 </div>
-                <div class="playButton">
-                    <button id="playButton" >
-                        <i class="ri-play-fill" id="playIcon"></i>
-                        <i class="ri-pause-mini-line" id="pauseIcon"></i>
-                    </button>
+                <div class="progress_container">
+                    <div class="progress_meter">
+                        <div class="current_time" id="current_time" >0:00</div>
+                        <div class="total_time" id="total_time" >2:44</div>
+                    </div>
+                    <div class="progress_div" id="progress_div">
+                        <div class="progress" id="progress"></div>
+                    </div>
                 </div>
-                <div class="playForword">
-                    <button><i class="ri-skip-forward-line"></i></button>
-                </div>
-            </div>
-             
-              <div class="progress"></div>
+            </div> 
+           </div>
+           <div class="audio_other_controls">
+                <h1>Other controls</h1>
            </div>
         </div>
     </div>
