@@ -1,88 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DASHBOARD</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-</head>
-<body>
-    <div class="dashBoardContainer">
-        <div class="dashboardSection1">
-            <div class="dashboardNavContainer">
-
-            </div>
-        </div>
-        <div class="dashboardSection2">
-            <div class="dashBoardSectionsponseredSection">
-
-            </div>
-            <div class="dashboardSongsforYouSection">
-                <div class="viewAllSection">
-                    <h3>Songs for You</h3>
-                    <a href="">view All</a>
+<% include ./partials/sideNavheader.ejs %>
+      <div class="dashboardSection2">
+        <div class="dashBoardSectionsponseredSection"></div>
+        <div class="dashboardSongsforYouSection">
+          <div class="viewAllSection">
+            <h3>Songs for You</h3>
+            <a href="/viewAllSongsForYou">view All</a>
+          </div>
+          <div class="dashBoardMusicSection">
+            <%music.forEach(function(elem){%>
+            <div class="dashBoardPoster">
+              <a href="/musicDetails/<%=elem._id%>">
+                <div class="posterPhoto">
+                  <img
+                    src="/audioPosterFile/<%=elem.songPosterFile[0]%>"
+                    alt=""
+                  />
                 </div>
-                <div class="dashBoardMusicSection">
-                 <%music.forEach(function(elem){%>
-                    <div class="dashBoardPoster">
-                     <a href="/musicDetails/<%=elem._id%>">
-                        <div class="posterPhoto"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
-                        <div class="songArtistTitle">
-                           <h3><%=elem.songName%></h3>
-                           <h4><%=elem.songArtist%></h4>
-                        </div>
-                     </a>  
-                     </div>
-                 <%})%>    
+                <div class="songArtistTitle">
+                  <h3><%=elem.songName%></h3>
+                  <h4><%=elem.songArtist%></h4>
                 </div>
+              </a>
             </div>
-            <div class="dashBoardPodcastSection">
-
-            </div>
+            <%})%>
+          </div>
+         <!----------------------------------Here player will come------------------------------------------>
         </div>
-        <div class="dashBoardMusicPlayer_Section">
-           <div class="songDetailsSection">
-              <div class="songPhoto"><img src="/audioPosterFile/<%=recent.musicPlayed.songPosterFile[0]%>" alt=""></div>
-              <div class="songDetails">
-                 <h3><%=recent.musicPlayed.songName%></h3>
-                 <h5>SongArtist</h5>   
+        <div class="dashBoardAlbumSection">
+          <div class="dashboardAlbumHeading">
+            <h3>ALBUMS</h3>
+            <a href="/viewAllAlbum">viewAll</a>
+          </div>
+          <%user.album.forEach(function(elem){%>
+            <div class="albumPoster">
+              <div class="albumImage">
+                <a href="/album/<%=elem._id%>">
+                  <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="poster" />
+                </a>
               </div>
-              <div class="songLike"><i class="ri-heart-line"></i></div>
-           </div>
-           <div class="playButtonSection">
-            <audio src="/audioPosterFile/<%=recent.musicPlayed.songPosterFile[1]%>" type="audio/mp3"></audio>
-            <div class="audio_controls_section">
-                <div class="playbuttonsHolder">
-                    <div class="playBackward">
-                        <button><i class="ri-skip-back-line"></i></button>
-                    </div>
-                    <div class="playButton">
-                        <button id="playButton" >
-                            <i class="ri-play-fill" id="playIcon"></i>
-                        </button>
-                    </div>
-                    <div class="playForword">
-                        <button><i class="ri-skip-forward-line"></i></button>
-                    </div>
-                </div>
-                <div class="progress_container">
-                    <div class="progress_meter">
-                        <div class="current_time" id="current_time" >0:00</div>
-                        <div class="total_time" id="total_time" >2:44</div>
-                    </div>
-                    <div class="progress_div" id="progress_div">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                </div>
-            </div> 
-           </div>
-           <div class="audio_other_controls">
-                <h1>Other controls</h1>
-           </div>
+            </div>
+          <%})%>
+          
         </div>
-    </div>
-    <script src="../javascripts/script.js"></script>
-</body>
-</html>
+        <div class="dashboardOtherSection"></div>
+      </div>
+<% include ./partials/sideNavFooter.ejs %>

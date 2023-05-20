@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let userModel=require("./users");
 let recentPlayed=require('./recentPlayed');
+let album=require("./album");
 const LocalStrategy = require("passport-local").Strategy;
 const passport=require("passport");
 var config=require("../config/config")
@@ -62,15 +63,22 @@ router.get("/logout", function (req, res) {
     res.redirect("/");
   });
 });
+router.get("/profile",isLoggedIn, async function(req,res,next){
+   let user=await userModel.findOne({username:req.session.passport.user}).populate("album");
+   console.log(user);
+   res.render("profile",{user:user});
+
+})
 /*--------------------------------------------------------Secondary Routes---------------------------------------* */
 router.get("/dashboard", isLoggedIn,async function(req,res,next){
-    let user= await userModel.findOne({username:req.session.passport.user}).populate("recentSong");
-    let music=await musicSchema.find().limit(4)
-    let currentSongId=user.recentSong._id;
+    let user= await userModel.findOne({username:req.session.passport.user}).populate("album");
+    let music=await musicSchema.find().limit(4);
+    console.log(user);
+    // let currentSongId=user.recentSong._id;
     // console.log(currentSongId);
-    let recent =await recentPlayed.findOne({_id:currentSongId}).populate("musicPlayed");
-    console.log(recent);
-    res.render("dashboard",{music:music,recent:recent});
+    // let recent =await recentPlayed.findOne({_id:currentSongId}).populate("musicPlayed");
+    // console.log(recent);
+    res.render("dashboard",{music:music,user:user});
 });
 router.get("/upload",isLoggedIn, async function(req,res){
    let user=await userModel.findOne({username:req.session.passport.user});
@@ -118,6 +126,56 @@ router.get("/musicDetails/:id",isLoggedIn, async function(req,res,next){
    user.recentSong=mymusic._id,
    user.save();
    res.redirect("/dashboard");
+});
+router.get("/viewAllSongsForYou",isLoggedIn, async function(req,res,next){
+     let user=await userModel.findOne({username:req.session.passport.user});
+     res.render("songsForYou");
+})
+router.get("/viewAllAlbum",isLoggedIn,function(req,res,next){
+    res.status(200).json({
+      message:"isme saari album dikhna ok"
+    })
+})
+router.get("/albumUpload",isLoggedIn,function(req,res,next){
+    res.status(200).render("albumUpload");
+})
+router.post("/albumUpload",
+config.single("albumPoster"),isLoggedIn,async function(req,res,next){
+  let user=await userModel.findOne({username:req.session.passport.user});
+   let data={
+    albumName:req.body.albumName,
+    albumPoster:req.file.filename
+   }
+   let myalbum=await album.create(data);
+   user.album.push(myalbum._id);
+   user.save();
+   res.redirect("/profile");
+})
+router.get("/albumMusicUpload/:id",isLoggedIn, async function(req,res,next){
+  let user=await userModel.findOne({username:req.session.passport.user});
+  console.log(req.params.id);
+  let id=req.params.id;
+  res.render("albumMusic",{id:id});
+});
+router.post("/UploadAlbumMusic/:id",isLoggedIn,config.array("file",2),async function(req,res,next){
+    let myalbum=await album.findById(req.params.id);
+    console.log(myalbum);
+    let uploadedData={
+      songName:req.body.songName,
+      songAlbum:req.body.songAlbum,
+      songArtist:req.body.songArtist,
+      songPosterFile:req.files.map((file)=>file.filename)    
+     };
+     let musicFile=await musicSchema.create(uploadedData);
+     console.log(musicFile);
+     myalbum.mymusic.push(musicFile._id);
+     myalbum.save();
+     res.redirect("/dashboard");
+})
+router.get("/album/:id", async function(req,res,next){
+    let myalbum=await album.findById(req.params.id).populate("mymusic");
+    console.log(myalbum);
+    res.status(200).json({message:req.params.id});
 })
 //LOGGED FUNCTION
 function isLoggedIn(req, res, next) {

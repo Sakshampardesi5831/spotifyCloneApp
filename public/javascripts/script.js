@@ -1,4 +1,4 @@
-let audio=document.querySelector("audio");
+/*let audio=document.querySelector("audio");
 let play=document.getElementById("playIcon");
 let totalTime=document.getElementById("total_time");
 let current_Time=document.getElementById("current_time");
@@ -51,7 +51,8 @@ audio.addEventListener("timeupdate",function(event){
     if(currentTime){
         current_Time.textContent=curr_du;
     }
-})
+})*/
+
 
 
 

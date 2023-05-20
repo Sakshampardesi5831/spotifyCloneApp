@@ -19,7 +19,11 @@ var userSchema= mongoose.Schema({
   recentSong:{
     type:mongoose.Schema.Types.ObjectId,
     ref:"recent"
-  }
+  },
+  album:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"album"
+   }]
 })
 userSchema.plugin(plm);
 module.exports=mongoose.model("user",userSchema);

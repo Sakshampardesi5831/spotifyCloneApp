@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <div class="albumUpload_Section">
+        <div class="albumUpload_Heading">
+             <div class="icon"><i class="ri-spotify-fill"></i></div>
+             <div class="brand">Spotify</div>
+        </div>
+        <div class="albumUpload_Subheading">
+            <h1>Hello !!! &nbsp;<span>User</span>&nbsp; Welcome to the ALBUM Upload Section</h1>
+        </div>
+        <div class="albumUpload_Container">
+              <div class="albumUpload_form-Section">
+                <form action="/albumUpload" method="post" enctype="multipart/form-data">
+                    <div class="albumUpload_form_Container">        
+                        <h4>Enter your Album Name</h4>
+                       <input type="text" placeholder="Enter the name Of album" name="albumName" id="albumName">
+                         <h4>Enter your Album Poster</h4>
+                       <input type="file" placeholder="Upload the Album poster" name="albumPoster" id="albumPoster">
+                       <button class="upload_button" title="click" >Upload file</button>
+                    </div>
+                </form>   
+              </div>
+              <div class="albumUpload_photo-Section">
+                   <div class="albumUpload_photo"></div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>

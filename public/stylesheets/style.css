@@ -11,6 +11,7 @@
 html,body{
   width: 100%;
   height: 100%;
+  position: relative;
 }
 body::-webkit-scrollbar {
   width: 0.5em;
@@ -374,6 +375,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   margin-bottom: 0.5vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #fff;
 }
 .songUploadForm>input::placeholder{
   color: #fff;
@@ -423,6 +425,7 @@ label{
 .dashBoardContainer{
   position: relative;
   display: flex;
+  justify-content: end;
   width: 100%;
   min-height: 100vh;
   background-color: #121212;
@@ -441,12 +444,43 @@ label{
   border: 3px solid blue;
   overflow-y: auto;
 }
+/*NAVIGATION CSS*/
 .dashboardNavContainer{
   position: relative;
   width: 100%;
-  height: 30vh;
-  /* border: 3px solid greenyellow; */
+  height: 20vh;
+  border: 3px solid greenyellow;
 }
+.dashboardNavContainer>.home{
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  text-decoration: none;
+  color: white;
+}
+.dashboardNavContainer>.home>a{
+  display: flex;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  text-decoration: none;
+  color: white;
+  gap:15px;
+  color: rgb(193, 184, 184); 
+}
+.dashboardNavContainer>.home>a>.homeIcon{
+  font-size: 2vw;
+}
+.dashboardNavContainer>.home>a>.heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5vw 1vw;
+  text-transform:capitalize;
+  font-size: 1.2vw;
+}
+.dashboardNavContainer>.home>a:hover{
+  color: white;
+}
+/*NAVIGATION CSS*/
 .dashboardSongsforYouSection{
   width: 100%;
   min-height: 40vh;
@@ -531,11 +565,7 @@ label{
   margin-bottom: 0.5vw;
   color: #d0c9c9;
 }
-.dashBoardPodcastSection{
-  width: 100%;
-  min-height: 40vh;
-  border: 3px solid #fff;
-}
+
 .dashBoardMusicPlayer_Section{
   display: flex;
   justify-content: space-around;
@@ -684,3 +714,180 @@ label{
   background-color:#444;
   color: white;
 }
+/*------------------------------SONGS FOR ---------------------------------------------------------------------------------*/
+.dashBoardAlbumSection{
+  width: 100%;
+  padding: 0.5vw 0.5vw; 
+  border: 3px solid #fff;
+}
+.dashboardAlbumHeading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  border: 3px solid red;
+}
+.dashboardAlbumHeading>h3{
+  font-size: 1.5vw;
+  color: #fff;
+}
+.dashboardAlbumHeading>a{
+  text-decoration: none;
+  color: #6b6969;
+  font-weight: bold;
+}
+.dashBoardAlbumSection>.albumPoster{
+  width: 25%;
+  height: 40vh;
+  border: 3px solid pink;
+  margin: 0.5vw 0.5vw;
+}
+.dashBoardAlbumSection>.albumPoster>.albumImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100%;
+   border: 2px solid red;
+}
+.dashBoardAlbumSection>.albumPoster>.albumImage>a{
+  width: 100%;
+  height: 100%;
+  background-color: #1ccc5b;
+}
+.dashBoardAlbumSection>.albumPoster>.albumImage>a>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*-*------------------------------------------------------------------------------------*/
+.dashboardOtherSection{
+  width: 100%;
+  min-height: 30vh;
+  border: 3px solid #fff;
+}
+/*-------------------------------------ALBUM UPLOAD CSS-----------------------------------------------------*/
+.albumUpload_Section{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #121212;
+}
+.albumUpload_Heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  /* background-color: red; */
+}
+.albumUpload_Heading .brand{
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: #fff;
+}
+.albumUpload_Subheading{
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  color: white;
+}
+.albumUpload_Subheading>h1>span{
+  color: #1ccc5b;
+  font-style: italic;
+}
+.albumUpload_Container{
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  /* background-color: #6e6b6b; */
+  margin-top: 2vw;
+}
+.albumUpload_form-Section{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  min-height: 80vh;
+  /* border: 5px solid black; */
+  padding: 0 1vw;
+}
+.albumUpload_photo-Section{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
+  min-height: 80vh;
+  /* border: 5px solid black; */
+  padding: 0 1vw;
+} 
+.albumUpload_photo{
+  width: 70%;
+  min-height: 70vh;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-image: url("https://i.pinimg.com/564x/5d/27/07/5d2707d8fbd5bcd1038bcfa0d3a169bf.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.albumUpload_form_Container{
+  padding: 1vw 1vw;
+  width: 100%;
+  min-height: 70vh;
+  /* border: 5px solid pink; */
+  overflow-y: auto;
+  overflow: hidden;
+}
+.albumUpload_form_Container>#albumName,#songName{
+  width: 95%;
+  padding: 1.2vw 1vw;
+  background-color: #444;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 0.5vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #fff;
+}
+
+.albumUpload_form_Container>#albumName::placeholder,#songName::placeholder{
+  color: #fff;
+}
+.albumUpload_form_Container>#albumPoster,#songPoster,#songFile{
+  width:95%;
+  border-radius: 10px;
+  padding: 0.5vw 0.2vw;
+  border: 1px solid #fff;
+  color: white;
+  font-size: 1.2vw;
+}
+.albumUpload_form_Container>h4{
+  width: 100%;
+  padding: 0.5vw;
+  color: white;
+}
+.upload_button{
+  padding: 0.7vw 1.9vw;
+  background-color: #1ccc5b;
+  color: white;
+ margin-top: 1vw;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+/*
+
+ width:95%;
+  border-radius: 10px;
+  padding: 0.2vw 0.2vw;
+  border: 1px solid #fff;
+  color: white;
+*/
+
+/*---------------------------------------------------------------------------------------------------------------*/
