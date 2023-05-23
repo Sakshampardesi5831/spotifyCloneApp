@@ -69,6 +69,7 @@ router.get("/profile",isLoggedIn, async function(req,res,next){
    res.render("profile",{user:user});
 
 })
+
 /*--------------------------------------------------------Secondary Routes---------------------------------------* */
 router.get("/dashboard", isLoggedIn,async function(req,res,next){
     let user= await userModel.findOne({username:req.session.passport.user}).populate("album");
@@ -172,11 +173,13 @@ router.post("/UploadAlbumMusic/:id",isLoggedIn,config.array("file",2),async func
      myalbum.save();
      res.redirect("/dashboard");
 })
+//this router is for detail of album
 router.get("/album/:id", async function(req,res,next){
     let myalbum=await album.findById(req.params.id).populate("mymusic");
     console.log(myalbum);
     res.status(200).json({message:req.params.id});
-})
+});
+
 //LOGGED FUNCTION
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {

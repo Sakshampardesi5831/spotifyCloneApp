@@ -890,4 +890,106 @@ label{
   color: white;
 */
 
-/*---------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------PROFILE SECTION----------------------------------------------------------------------*/
+.Profile-Container{
+  width: 70%;
+  min-height: 100vh;
+  border: 2px solid red;
+}
+.Profile_Container-heading{
+  width: 100%;
+  padding: 1vw 0.5vw;
+  border: 2px solid red;
+}
+.Profile_Photo-section{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 40vh;
+  border: 5px solid blue;
+  padding: 0.5vw 1vw;
+}
+.Profile_Photo{
+  width: 25%;
+  height: 80%;
+  border: 2px solid red;
+  border-radius: 50%;
+}
+.Profile_Photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+.Profile_Details{
+  width: 75%;
+  height: 90%;
+  border: 2px solid red;
+}
+
+.Uploaded_Album_Section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 60vh;
+  margin-top: 1vw;
+  border: 5px solid blue;
+  padding: 0.5vw 0.5vw;
+}
+.Uploaded_Album_Section-Heading_section{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+
+  width: 100%;
+  /* border: 3px solid red; */
+  color: #fff;
+  font-size: 1.5vw;
+}
+.Uploaded_Album_Section-Heading_section>a{
+  text-decoration: none;
+  color: #7f7a7a;
+  font-weight: 800;
+}
+.Uploaded_Album_Section-Heading_section>a:hover{
+  text-decoration: none;
+  color:#d0c9c9;
+  font-weight: 800;
+}
+.Album_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 25%;
+  height: 85%;
+  /* border: 2px solid white; */
+  border-radius: 20px;
+  background-color: #171717;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 0.5vw 0.5vw;
+}
+.AlbumPoster{
+  width: 90%;
+  height: 70%;
+  /* background-color: red; */
+  border-radius: 20px;
+}
+.AlbumPoster img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.AlbumName{
+  width: 90%;
+  font-size: 1.2vw;
+  /* background-color: #1ccc5b; */
+  color: white;
+}

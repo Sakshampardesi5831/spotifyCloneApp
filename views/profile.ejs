@@ -1,14 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-</head>
-<body>
-    <% user.album.forEach(function(elem){%>
+<% include ./partials/sideNavheader.ejs %>
+    <div class="Profile-Container">
+        <div class="Profile_Container-heading"></div>
+        <div class="Profile_Container-section">
+          <div class="Profile_Photo_Detail"></div>
+          <div class="Profile_Photo-section">
+             <div class="Profile_Photo"><img src="" alt=""></div>
+             <div class="Profile_Details"></div>
+          </div>
+          <div class="Uploaded_Album_Section"> 
+             <div class="Uploaded_Album_Section-Heading_section"><h3>Your Uploaded PlayList</h3>
+               <a href="/viewAllAlbum">viewAll</a>
+             </div>
+            <%user.album.forEach(function(elem){%>
+                <div class="Album_box">
+                    <div class="AlbumPoster">
+                       <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="">
+                    </div>
+                    <div class="AlbumName"><h3><%=elem.albumName%></h3></div>
+                </div>
+            <%})%> 
+          </div>
+        </div>
+    </div>
+    <!-- <% user.album.forEach(function(elem){%>
         <a href="/albumMusicUpload/<%=elem.id%>">elem</a>
-    <%})%> 
-</body>
-</html>
+    <%})%>  -->
+<% include ./partials/sideNavFooter.ejs %>
