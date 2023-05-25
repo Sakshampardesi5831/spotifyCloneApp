@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-  
+  font-family: "Raleway", sans-serif;
 }
-html,body{
+html,
+body {
   width: 100%;
   height: 100%;
   position: relative;
@@ -19,16 +19,16 @@ body::-webkit-scrollbar {
   background-color: #171717;
 }
 body::-webkit-scrollbar-thumb {
-  background-color:#6e6b6b;
+  background-color: #6e6b6b;
   outline: 1px solid slategrey;
 }
-#main-box{
+#main-box {
   display: flex;
   width: 100%;
   min-height: 100vh;
 }
 
-.spotify-form-section{
+.spotify-form-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,21 +41,19 @@ body::-webkit-scrollbar-thumb {
   background-image: linear-gradient(160deg, #000000 0%, #000000 50%, #1ccc5b 100%); */
   /* background-color: #000000;
   background-image: linear-gradient(135deg, #000000 0%, #000000 50%, #1ccc5b 100%); */
-  
-
 }
-.spotify-logo{
+.spotify-logo {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 0.5vw;
 }
-.ri-spotify-fill{
-    font-size: 4.5vw;
-   color: #1ccc5b;
+.ri-spotify-fill {
+  font-size: 4.5vw;
+  color: #1ccc5b;
 }
-.title{
+.title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,56 +61,63 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   padding: 0.5vw 0.5vw;
 }
-.spotify-form{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 90%;
-   height: 70vh;
-   padding:1.5vw 0;
+.spotify-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 70vh;
+  padding: 1.5vw 0;
 }
-.form-section{
+.form-section {
   width: 90%;
   height: 90%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border: 1px solid #444;
   padding: 0.5vw 0.5vw;
 }
-.nested-form{
-  width: 100%;
-  padding: 0.5vw 1vw; 
-}
-.nested-form>#username,#email,#name,#password{
-   width: 100%;
-   padding: 1vw 1vw;
-   margin-bottom: 0.5vw;
-   background-color: #000000dd;
-   color: white;
-   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-   border: none;
-   outline: none;
-   border-radius: 10px;
-}
-.gender{
+.nested-form {
   width: 100%;
   padding: 0.5vw 1vw;
 }
-#genderSelect{
+.nested-form > #username,
+#email,
+#name,
+#password {
+  width: 100%;
+  padding: 1vw 1vw;
+  margin-bottom: 0.5vw;
+  background-color: #000000dd;
+  color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.gender {
+  width: 100%;
+  padding: 0.5vw 1vw;
+}
+#genderSelect {
   width: 100%;
   padding: 1vw 1vw;
   background-color: #000000dd;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border: none;
-   outline: none;
-   border-radius: 10px;
-   color: #fff;
+  outline: none;
+  border-radius: 10px;
+  color: #fff;
 }
-.button-submit{
+.button-submit {
   width: 100%;
   padding: 1vw 1vw;
 }
-.button{
+.button {
   width: 60%;
   padding: 0.5vw 1vw;
   border-radius: 100px;
@@ -120,31 +125,32 @@ body::-webkit-scrollbar-thumb {
   outline: none;
   font-size: 1.5vw;
   color: #fff;
- background-color: #1ccc5b;
- font-weight: 700;
+  background-color: #1ccc5b;
+  font-weight: 700;
 }
-.termsAndcondition{
+.termsAndcondition {
   margin-top: 2vw;
   width: 90%;
   padding: 0.5vw 0.5vw;
 }
-.terms,.condition{
+.terms,
+.condition {
   width: 100%;
   padding: 0.2vw 0.2vw;
   font-size: 0.8vw;
   color: #444;
 }
-.terms span{
-    color: #1ccc5b;
-    cursor: pointer;
-    font-weight: 700;
-}
-.condition span{
+.terms span {
   color: #1ccc5b;
   cursor: pointer;
   font-weight: 700;
 }
-.spotify-poster-section{
+.condition span {
+  color: #1ccc5b;
+  cursor: pointer;
+  font-weight: 700;
+}
+.spotify-poster-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,7 +162,7 @@ body::-webkit-scrollbar-thumb {
   background-size: cover;
   background-position: center;
 }
-.small_heading{
+.small_heading {
   position: absolute;
   top: 0%;
   right: 0%;
@@ -168,7 +174,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0.5vw 0.5vw;
   color: #fff;
 }
-.buttonLogin{
+.buttonLogin {
   width: 20%;
   padding: 0.5vw 1vw;
   border-radius: 100px;
@@ -179,26 +185,26 @@ body::-webkit-scrollbar-thumb {
   font-weight: 700;
   color: #fff;
 }
-.buttonLogin>a{
+.buttonLogin > a {
   text-decoration: none;
   color: white;
 }
 /*------------------------------------------LOGIN SECTION-------------------------------------------------------*/
-.Login-Container{
+.Login-Container {
   display: flex;
   width: 100%;
   min-height: 100vh;
   background-color: #444;
 }
-.Login-Section{
+.Login-Section {
   display: flex;
   justify-content: end;
   align-items: center;
   width: 50%;
   min-height: 100vh;
-  background-color:#121212;
+  background-color: #121212;
 }
-.Login_Logo{
+.Login_Logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -208,7 +214,7 @@ body::-webkit-scrollbar-thumb {
   gap: 10px;
   color: white;
 }
-.Login-box{
+.Login-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +222,7 @@ body::-webkit-scrollbar-thumb {
   width: 80%;
   min-height: 80vh;
 }
-.Login_heading{
+.Login_heading {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -228,25 +234,25 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   margin-bottom: 1vw;
 }
-.Login_heading>h2{
+.Login_heading > h2 {
   width: 100%;
   padding: 0.5vw 0.5vw;
 }
-.Login_heading>p{
+.Login_heading > p {
   font-size: 1vw;
   font-weight: 600;
   padding: 0.5vw 1vw;
   width: 100%;
 }
-.Login_heading>p>span>a{
+.Login_heading > p > span > a {
   text-decoration: none;
   color: #1ccc5b;
 }
-.Login_form-section{
+.Login_form-section {
   width: 100%;
   padding: 1vw 1vw;
 }
-.Login_form-section_form{
+.Login_form-section_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,13 +260,13 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   height: 30vh;
 }
-.Login_form-Input_section{
- display: flex;
- flex-direction: column;
+.Login_form-Input_section {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding:1vw 0.5vw;
+  padding: 1vw 0.5vw;
 }
-.Login_form-Input_section>#input{
+.Login_form-Input_section > #input {
   width: 70%;
   padding: 1.5vw 0.5vw;
   margin-bottom: 1vw;
@@ -271,15 +277,15 @@ body::-webkit-scrollbar-thumb {
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.Login_form-Input_section>#input::placeholder{
+.Login_form-Input_section > #input::placeholder {
   color: white;
   padding-left: 0.5vw;
 }
-.Loginbutton{
+.Loginbutton {
   width: 100%;
   padding: 0.5vw 0.5vw;
 }
-.Loginbutton>button{
+.Loginbutton > button {
   padding: 1vw 3vw;
   background-color: #1ccc5b;
   color: #fff;
@@ -289,7 +295,7 @@ body::-webkit-scrollbar-thumb {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.Login_Poster{
+.Login_Poster {
   width: 50%;
   min-height: 100vh;
   background-color: #444;
@@ -299,7 +305,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #1ccc5b;
 }
 /*----------------------------UPLOADING A SONG CSS--------------------------------------------------------------*/
-.songUploadContainer{
+.songUploadContainer {
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -308,7 +314,7 @@ body::-webkit-scrollbar-thumb {
   min-height: 100vh;
   background-color: #121212;
 }
-.songUploadHeading{
+.songUploadHeading {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,7 +324,7 @@ body::-webkit-scrollbar-thumb {
   /* padding: 1vw 1vw; */
   /* background-color: blue; */
 }
-.songHeadingBox_1{
+.songHeadingBox_1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,47 +332,48 @@ body::-webkit-scrollbar-thumb {
   /* padding: 0.5vw 1vw; */
   /* background-color: red; */
 }
-.songHeadingBox_1>h2{
+.songHeadingBox_1 > h2 {
   font-size: 2.5vw;
   color: #fff;
   font-weight: 700;
-  
 }
-.songHeadingBox_2{
+.songHeadingBox_2 {
   padding: 0.5vw 1.5vw;
   /* background-color: #1ccc5b; */
 }
-.songHeadingBox_2>h1,p{
+.songHeadingBox_2 > h1,
+p {
   color: #fff;
   margin-bottom: 0.5vw;
 }
-.songUploadFormSection{
+.songUploadFormSection {
   display: flex;
   width: 80%;
   min-height: 68vh;
   margin-bottom: 1vw;
 }
-.songUploadFormSection_Box{
+.songUploadFormSection_Box {
   display: flex;
   justify-content: center;
-  align-items:center ;
+  align-items: center;
   width: 50%;
   height: 68vh;
-
 }
-.songUploadFormSection_Box>img{
+.songUploadFormSection_Box > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
 }
-.songUploadForm{
+.songUploadForm {
   width: 90%;
   height: 90%;
   padding: 0.5vw 1vw;
 }
-.songUploadForm>#songName,#songAlbum,#songArtist{
+.songUploadForm > #songName,
+#songAlbum,
+#songArtist {
   width: 95%;
   padding: 1.2vw 1vw;
   background-color: #444;
@@ -377,7 +384,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #fff;
 }
-.songUploadForm>input::placeholder{
+.songUploadForm > input::placeholder {
   color: #fff;
 }
 /* .form-control{
@@ -386,10 +393,10 @@ body::-webkit-scrollbar-thumb {
   color: white !important;
   background-color: #444 !important;
 } */
-input[type=file]{
+input[type="file"] {
   margin-bottom: 0.5vw;
 }
-input[type=file]::file-selector-button {
+input[type="file"]::file-selector-button {
   margin-right: 20px;
   border: none;
   background: #444;
@@ -398,20 +405,21 @@ input[type=file]::file-selector-button {
   color: #fff;
   cursor: pointer;
 }
-input[type=file]::file-selector-button :hover{
+input[type="file"]::file-selector-button :hover {
   background: #121212;
 }
-#songPoster,#songFile{
-  width:95%;
+#songPoster,
+#songFile {
+  width: 95%;
   border-radius: 10px;
   padding: 0.2vw 0.2vw;
   border: 1px solid #fff;
   color: white;
 }
-label{
+label {
   color: white;
 }
-.uploadButton{
+.uploadButton {
   padding: 0.5vw 3vw;
   background-color: #1ccc5b;
   margin-top: 0.5vw;
@@ -422,7 +430,7 @@ label{
   border-radius: 20px;
 }
 /*------------------------------DASHBOARD CSS START----------------------------------------------------------------------------------*/
-.dashBoardContainer{
+.dashBoardContainer {
   position: relative;
   display: flex;
   justify-content: end;
@@ -430,7 +438,7 @@ label{
   min-height: 100vh;
   background-color: #121212;
 }
-.dashboardSection1{
+.dashboardSection1 {
   position: sticky;
   top: 0%;
   left: 0%;
@@ -438,102 +446,101 @@ label{
   height: 100vh;
   border: 2px solid red;
 }
-.dashboardSection2{
+.dashboardSection2 {
   width: 70%;
   min-height: 100vh;
   border: 3px solid blue;
   overflow-y: auto;
 }
 /*NAVIGATION CSS*/
-.dashboardNavContainer{
+.dashboardNavContainer {
   position: relative;
   width: 100%;
   height: 20vh;
   border: 3px solid greenyellow;
 }
-.dashboardNavContainer>.home{
+.dashboardNavContainer > .home {
   width: 100%;
   padding: 0.5vw 0.5vw;
   text-decoration: none;
   color: white;
 }
-.dashboardNavContainer>.home>a{
+.dashboardNavContainer > .home > a {
   display: flex;
   width: 100%;
   padding: 0.5vw 0.5vw;
   text-decoration: none;
   color: white;
-  gap:15px;
-  color: rgb(193, 184, 184); 
+  gap: 15px;
+  color: rgb(193, 184, 184);
 }
-.dashboardNavContainer>.home>a>.homeIcon{
+.dashboardNavContainer > .home > a > .homeIcon {
   font-size: 2vw;
 }
-.dashboardNavContainer>.home>a>.heading{
+.dashboardNavContainer > .home > a > .heading {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.5vw 1vw;
-  text-transform:capitalize;
+  text-transform: capitalize;
   font-size: 1.2vw;
 }
-.dashboardNavContainer>.home>a:hover{
+.dashboardNavContainer > .home > a:hover {
   color: white;
 }
 /*NAVIGATION CSS*/
-.dashboardSongsforYouSection{
+.dashboardSongsforYouSection {
   width: 100%;
   min-height: 40vh;
   /* border: 5px solid pink; */
 }
-.dashBoardSectionsponseredSection{
+.dashBoardSectionsponseredSection {
   width: 100%;
   min-height: 40vh;
   border: 5px solid #fff;
 }
-.viewAllSection{
+.viewAllSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0.5vw 0.5vw;
   /* background-color: red; */
-
 }
-.viewAllSection>a{
+.viewAllSection > a {
   padding: 0.5vw 1vw;
   text-decoration: none;
   color: #6b6969;
   font-weight: 800;
 }
-.viewAllSection>h3{
+.viewAllSection > h3 {
   font-size: 1.5vw;
   color: #fff;
 }
-.dashBoardMusicSection{
+.dashBoardMusicSection {
   display: flex;
   gap: 10px;
   width: 100%;
   padding: 0.5vw 1vw;
   border: 3px solid gray;
 }
-.dashBoardPoster{
-   display: flex;
-   /* flex-direction: column; */
-   justify-content: space-around;
-   align-items: center;
-   width: 25%;
-   min-height: 40vh;
-   background-color:#171717 ;
-   border-radius: 15px;
-   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.dashBoardPoster {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  min-height: 40vh;
+  background-color: #171717;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.dashBoardPoster>a{
+.dashBoardPoster > a {
   width: 80%;
   padding: 0.2vw 0.2vw;
   text-decoration: none;
 }
-.posterPhoto{
+.posterPhoto {
   width: 100%;
   height: 30vh;
   background-color: #6b6969;
@@ -541,32 +548,31 @@ label{
   margin-bottom: 0.5vw;
   margin-top: 0.5vw;
 }
-.posterPhoto img{
+.posterPhoto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 15px;
 }
-.songArtistTitle{
+.songArtistTitle {
   width: 85%;
 }
-.songArtistTitle>h3{
+.songArtistTitle > h3 {
   width: 100%;
   padding: 0.5vw 0.5vw;
   margin-bottom: 0.5vw;
   color: white;
   font-size: 1.5vw;
-  
 }
-.songArtistTitle>h4{
+.songArtistTitle > h4 {
   width: 100%;
   padding: 0.5vw 0.5vw;
   margin-bottom: 0.5vw;
   color: #d0c9c9;
 }
 
-.dashBoardMusicPlayer_Section{
+.dashBoardMusicPlayer_Section {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -575,32 +581,32 @@ label{
   background-color: #171717;
   position: fixed;
   bottom: 0%;
-  left: 0%; 
+  left: 0%;
 }
-#pauseIcon{
+#pauseIcon {
   display: none;
 }
-.songDetailsSection{
+.songDetailsSection {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 25%;
   height: 15vh;
 }
-.songPhoto{
+.songPhoto {
   width: 25%;
   height: 12vh;
   border: 2px solid rebeccapurple;
   border-radius: 10px;
 }
-.songPhoto img{
+.songPhoto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
 }
-.songDetails{
+.songDetails {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -608,22 +614,22 @@ label{
   width: 50%;
   height: 12vh;
 }
-.songDetails>h3{
+.songDetails > h3 {
   width: 100%;
   padding: 0.5vw 1vw;
   color: white;
 }
-.songDetails>h5{
+.songDetails > h5 {
   width: 100%;
   padding: 0.5vw 1vw;
   color: #7f7a7a;
 }
-.songLike{
+.songLike {
   padding: 0.5vw 0.5vw;
   color: #fff;
   font-size: 1.5vw;
 }
-.playButtonSection{
+.playButtonSection {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -633,7 +639,9 @@ label{
   /* border: 2px solid blue; */
 }
 
-.playButton,.playForword,.playBackward{
+.playButton,
+.playForword,
+.playBackward {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -642,14 +650,16 @@ label{
   border-radius: 50%;
   background-color: #fff;
 }
-.playButton>button,.playForword>button,.playBackward>button{
+.playButton > button,
+.playForword > button,
+.playBackward > button {
   font-size: 1.5vw;
   background-color: #fff;
   border-radius: 50%;
   border: none;
   outline: none;
 }
-.playbuttonsHolder{
+.playbuttonsHolder {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -660,17 +670,17 @@ label{
   padding-top: 0.5vw;
 }
 
-.audio_controls_section{
+.audio_controls_section {
   width: 60%;
   height: 100%;
   /* background-color: black; */
 }
-.progress_container{
+.progress_container {
   width: 100%;
   height: 50%;
   /* background-color: #d0c9c9; */
 }
-.progress_meter{
+.progress_meter {
   width: 100%;
   padding: 0.2vw 0.2vw;
   /* background-color: #fff; */
@@ -679,7 +689,7 @@ label{
   align-items: center;
   color: #fff;
 }
-.progress_div{
+.progress_div {
   position: relative;
   width: 100%;
   height: 5px;
@@ -687,40 +697,40 @@ label{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    margin-top: 10px;
-    transition: all 1s linear;
-    appearance: none;
-    cursor: pointer;
-    border-radius: 40px;
-}
-.progress{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color:#1ccc5b;
+  margin-top: 10px;
   transition: all 1s linear;
   appearance: none;
   cursor: pointer;
   border-radius: 40px;
 }
-.audio_other_controls{
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #1ccc5b;
+  transition: all 1s linear;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 40px;
+}
+.audio_other_controls {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20%;
   height: 100%;
-  background-color:#444;
+  background-color: #444;
   color: white;
 }
 /*------------------------------SONGS FOR ---------------------------------------------------------------------------------*/
-.dashBoardAlbumSection{
+.dashBoardAlbumSection {
   width: 100%;
-  padding: 0.5vw 0.5vw; 
+  padding: 0.5vw 0.5vw;
   border: 3px solid #fff;
 }
-.dashboardAlbumHeading{
+.dashboardAlbumHeading {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -728,35 +738,35 @@ label{
   padding: 0.5vw 0.5vw;
   border: 3px solid red;
 }
-.dashboardAlbumHeading>h3{
+.dashboardAlbumHeading > h3 {
   font-size: 1.5vw;
   color: #fff;
 }
-.dashboardAlbumHeading>a{
+.dashboardAlbumHeading > a {
   text-decoration: none;
   color: #6b6969;
   font-weight: bold;
 }
-.dashBoardAlbumSection>.albumPoster{
+.dashBoardAlbumSection > .albumPoster {
   width: 25%;
   height: 40vh;
   border: 3px solid pink;
   margin: 0.5vw 0.5vw;
 }
-.dashBoardAlbumSection>.albumPoster>.albumImage{
+.dashBoardAlbumSection > .albumPoster > .albumImage {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:100%;
+  width: 100%;
   height: 100%;
-   border: 2px solid red;
+  border: 2px solid red;
 }
-.dashBoardAlbumSection>.albumPoster>.albumImage>a{
+.dashBoardAlbumSection > .albumPoster > .albumImage > a {
   width: 100%;
   height: 100%;
   background-color: #1ccc5b;
 }
-.dashBoardAlbumSection>.albumPoster>.albumImage>a>img{
+.dashBoardAlbumSection > .albumPoster > .albumImage > a > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -764,18 +774,18 @@ label{
 }
 
 /*-*------------------------------------------------------------------------------------*/
-.dashboardOtherSection{
+.dashboardOtherSection {
   width: 100%;
   min-height: 30vh;
   border: 3px solid #fff;
 }
 /*-------------------------------------ALBUM UPLOAD CSS-----------------------------------------------------*/
-.albumUpload_Section{
+.albumUpload_Section {
   width: 100%;
   min-height: 100vh;
   background-color: #121212;
 }
-.albumUpload_Heading{
+.albumUpload_Heading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -784,12 +794,12 @@ label{
   padding: 0.5vw 0.5vw;
   /* background-color: red; */
 }
-.albumUpload_Heading .brand{
+.albumUpload_Heading .brand {
   font-size: 2.5vw;
   font-weight: bold;
   color: #fff;
 }
-.albumUpload_Subheading{
+.albumUpload_Subheading {
   width: 100%;
   padding: 0.5vw 0.5vw;
   display: flex;
@@ -798,18 +808,18 @@ label{
   font-size: 1.5vw;
   color: white;
 }
-.albumUpload_Subheading>h1>span{
+.albumUpload_Subheading > h1 > span {
   color: #1ccc5b;
   font-style: italic;
 }
-.albumUpload_Container{
+.albumUpload_Container {
   display: flex;
   width: 100%;
   min-height: 80vh;
   /* background-color: #6e6b6b; */
   margin-top: 2vw;
 }
-.albumUpload_form-Section{
+.albumUpload_form-Section {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -818,7 +828,7 @@ label{
   /* border: 5px solid black; */
   padding: 0 1vw;
 }
-.albumUpload_photo-Section{
+.albumUpload_photo-Section {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -826,8 +836,8 @@ label{
   min-height: 80vh;
   /* border: 5px solid black; */
   padding: 0 1vw;
-} 
-.albumUpload_photo{
+}
+.albumUpload_photo {
   width: 70%;
   min-height: 70vh;
   border-radius: 10px;
@@ -836,7 +846,7 @@ label{
   background-size: cover;
   background-position: center;
 }
-.albumUpload_form_Container{
+.albumUpload_form_Container {
   padding: 1vw 1vw;
   width: 100%;
   min-height: 70vh;
@@ -844,7 +854,8 @@ label{
   overflow-y: auto;
   overflow: hidden;
 }
-.albumUpload_form_Container>#albumName,#songName{
+.albumUpload_form_Container > #albumName,
+#songName {
   width: 95%;
   padding: 1.2vw 1vw;
   background-color: #444;
@@ -856,27 +867,30 @@ label{
   color: #fff;
 }
 
-.albumUpload_form_Container>#albumName::placeholder,#songName::placeholder{
+.albumUpload_form_Container > #albumName::placeholder,
+#songName::placeholder {
   color: #fff;
 }
-.albumUpload_form_Container>#albumPoster,#songPoster,#songFile{
-  width:95%;
+.albumUpload_form_Container > #albumPoster,
+#songPoster,
+#songFile {
+  width: 95%;
   border-radius: 10px;
   padding: 0.5vw 0.2vw;
   border: 1px solid #fff;
   color: white;
   font-size: 1.2vw;
 }
-.albumUpload_form_Container>h4{
+.albumUpload_form_Container > h4 {
   width: 100%;
   padding: 0.5vw;
   color: white;
 }
-.upload_button{
+.upload_button {
   padding: 0.7vw 1.9vw;
   background-color: #1ccc5b;
   color: white;
- margin-top: 1vw;
+  margin-top: 1vw;
   border-radius: 50px;
   border: none;
   outline: none;
@@ -891,17 +905,17 @@ label{
 */
 
 /*-----------------------------------------PROFILE SECTION----------------------------------------------------------------------*/
-.Profile-Container{
+.Profile-Container {
   width: 70%;
   min-height: 100vh;
   border: 2px solid red;
 }
-.Profile_Container-heading{
+.Profile_Container-heading {
   width: 100%;
   padding: 1vw 0.5vw;
   border: 2px solid red;
 }
-.Profile_Photo-section{
+.Profile_Photo-section {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -911,26 +925,26 @@ label{
   border: 5px solid blue;
   padding: 0.5vw 1vw;
 }
-.Profile_Photo{
+.Profile_Photo {
   width: 25%;
   height: 80%;
   border: 2px solid red;
   border-radius: 50%;
 }
-.Profile_Photo img{
+.Profile_Photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
 }
-.Profile_Details{
+.Profile_Details {
   width: 75%;
   height: 90%;
   border: 2px solid red;
 }
 
-.Uploaded_Album_Section{
+.Uploaded_Album_Section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -940,7 +954,7 @@ label{
   border: 5px solid blue;
   padding: 0.5vw 0.5vw;
 }
-.Uploaded_Album_Section-Heading_section{
+.Uploaded_Album_Section-Heading_section {
   display: flex;
   justify-content: space-between;
   padding: 0 1vw;
@@ -950,17 +964,17 @@ label{
   color: #fff;
   font-size: 1.5vw;
 }
-.Uploaded_Album_Section-Heading_section>a{
+.Uploaded_Album_Section-Heading_section > a {
   text-decoration: none;
   color: #7f7a7a;
   font-weight: 800;
 }
-.Uploaded_Album_Section-Heading_section>a:hover{
+.Uploaded_Album_Section-Heading_section > a:hover {
   text-decoration: none;
-  color:#d0c9c9;
+  color: #d0c9c9;
   font-weight: 800;
 }
-.Album_box{
+.Album_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -974,22 +988,160 @@ label{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 0.5vw 0.5vw;
 }
-.AlbumPoster{
+.AlbumPoster {
   width: 90%;
   height: 70%;
   /* background-color: red; */
   border-radius: 20px;
 }
-.AlbumPoster img{
+.AlbumPoster img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
 }
-.AlbumName{
+.AlbumName {
   width: 90%;
   font-size: 1.2vw;
   /* background-color: #1ccc5b; */
   color: white;
+}
+
+/*---------------------------------Album detail Page-----------------------------------------------------------------------*/
+.AlbumDetail_Container {
+  position: relative;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #121212;
+  border: 2px solid pink;
+}
+.Profile_header {
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  padding: 2vw 1vw;
+  border: 6px solid green;
+}
+.AlbumDetail_Container_Poster-Section {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 40vh;
+  margin-top: 0.5vw;
+  padding: 1vw 1vw;
+}
+.AlbumDetail_Poster {
+  width: 25%;
+  height: 100%;
+  /* border: 5px solid salmon; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.AlbumDetail_Poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.AlbumDetail_PosterDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  height: 100%;
+}
+.AlbumDetail_PosterName {
+  padding: 0.5vw 0.5vw;
+  width: 100%;
+  height: 50%;
+  color: #fff;
+  font-size: 2.5vw;
+}
+.AlbumDetail_playlistAuthenication {
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  color: white;
+  font-size: 1vw;
+  font-weight: 400;
+}
+.AlbumDetail_Container_Music-Section {
+  width: 100%;
+  min-height: 47vh;
+  margin-top: 0.5vw;
+  overflow-y: auto;
+}
+.AlbumDetail_Music_Section-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3vw 0.3vw;
+  width: 100%;
+  min-height: 10vh;
+  gap: 10px;
+}
+
+.AlbumDetail_Musics{
+  gap: 10px;
+  width: 100%;
+  padding: 1vw 0.3vw;
+  margin-top: 10px;
+  min-height: 10vh;
+  overflow-y: auto;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  /* border: 1px solid #dddddd; */
+  text-align: left;
+  padding: 8px;
+  color: white;
+  
+}
+th{
+  border-bottom: 2px solid white;
+}
+#row{
+  margin-top: 1vw;
+}
+#row:hover{
+  background-color: #444;
+}
+.index{
+  width: 5%;
+}
+.mytitle{
+  width: 40%;
+}
+.music_poster_title{
+  display: flex;
+  gap: 10px;
+  height: 10vh;
+}
+.music_poster{
+  width: 25%;
+  height:100%;
+  border: 3px solid black;
+}
+.music_poster img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.music_title{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0.5vw;
+  width: 75%;
+  height: 100%;
+}
+.music_title>h4{
+  font-size: 1.2vw;
 }

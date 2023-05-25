@@ -177,7 +177,7 @@ router.post("/UploadAlbumMusic/:id",isLoggedIn,config.array("file",2),async func
 router.get("/album/:id", async function(req,res,next){
     let myalbum=await album.findById(req.params.id).populate("mymusic");
     console.log(myalbum);
-    res.status(200).json({message:req.params.id});
+    res.render("albumDetail",{myalbum:myalbum});
 });
 
 //LOGGED FUNCTION

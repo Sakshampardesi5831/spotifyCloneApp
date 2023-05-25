@@ -1,0 +1,46 @@
+<% include ./partials/sideNavheader.ejs %>
+<div class="AlbumDetail_Container">
+    <% include ./partials/profileHeader.ejs %>
+    <div class="AlbumDetail_Container_Poster-Section">
+        <div class="AlbumDetail_Poster">
+            <img src="/audioPosterFile/<%=myalbum.albumPoster%>" alt="album_Poster">
+        </div>
+        <div class="AlbumDetail_PosterDetail">
+            <div class="AlbumDetail_playlistAuthenication">
+                <h2>Public PlayList</h2>
+            </div>
+            <div class="AlbumDetail_PosterName">
+                <h1><%=myalbum.albumName%></h1>
+            </div>
+        </div>
+    </div>
+    <div class="AlbumDetail_Container_Music-Section">
+        <div class="AlbumDetail_Musics">
+           <table>
+            <tr>
+              <th class="index">#</th>
+              <th  class="mytitle">title</th>
+              <th class="album">album</th>
+              <th class="uploaded">uploaded</th>
+              <th class="music_duration"><i class="ri-time-line"></i></th>
+            </tr>
+            <% myalbum.mymusic.forEach(function(elem,index){%>
+                <tr id="row">
+                    <td><%=index+1%></td>
+                    <td class="music_poster_title">
+                      <div class="music_poster"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
+                      <div class="music_title">
+                          <h4><%=elem.songName%></h4>
+                      </div>
+                    </td>
+                    <td>Germany</td>
+                    <td>Date</td>
+                    <td>2:33</td>
+                  </tr>
+            <%})%>
+            
+          </table>
+        </div>
+    </div>
+</div>
+<% include ./partials/sideNavFooter.ejs %>
