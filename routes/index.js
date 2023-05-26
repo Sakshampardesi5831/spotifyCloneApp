@@ -64,12 +64,17 @@ router.get("/logout", function (req, res) {
   });
 });
 router.get("/profile",isLoggedIn, async function(req,res,next){
-   let user=await userModel.findOne({username:req.session.passport.user}).populate("album");
+   let user=await userModel.findOne({username:req.session.passport.user}).populate("album").limit(4);
    console.log(user);
    res.render("profile",{user:user});
 
 })
-
+router.post("/uploadPic",isLoggedIn,config.single("profile"), async function(req,res,next){
+  let user=await userModel.findOne({username:req.session.passport.user});
+  user.profilePic=req.file.filename,
+  user.save();
+  res.redirect("/profile");
+})
 /*--------------------------------------------------------Secondary Routes---------------------------------------* */
 router.get("/dashboard", isLoggedIn,async function(req,res,next){
     let user= await userModel.findOne({username:req.session.passport.user}).populate("album");

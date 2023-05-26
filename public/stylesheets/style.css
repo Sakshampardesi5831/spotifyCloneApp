@@ -447,6 +447,7 @@ label {
   border: 2px solid red;
 }
 .dashboardSection2 {
+  position: relative;
   width: 70%;
   min-height: 100vh;
   border: 3px solid blue;
@@ -736,7 +737,7 @@ label {
   align-items: center;
   width: 100%;
   padding: 0.5vw 0.5vw;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 .dashboardAlbumHeading > h3 {
   font-size: 1.5vw;
@@ -906,10 +907,98 @@ label {
 
 /*-----------------------------------------PROFILE SECTION----------------------------------------------------------------------*/
 .Profile-Container {
+  position: relative;
   width: 70%;
   min-height: 100vh;
   border: 2px solid red;
 }
+.overlayer {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  right: 0%;
+  background-color: #121212b0;
+  display: none;
+}
+
+.model-container {
+  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 50%;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ri-close-fill {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  padding: 1vw 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5vw;
+}
+#uploadPic {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 90%;
+  height: 45%;
+  background-color: #171717;
+  padding: 0.5vw 1vw;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#uploadPic > button {
+  padding: 0.5vw 2vw;
+  border-radius: 100px;
+  background-color: white;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: 600;
+}
+#uploadPic > input[type="file"] {
+  color: white;
+}
+#uploadPic > input[type="file"]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #444;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+/*
+input[type="file"] {
+  margin-bottom: 0.5vw;
+}
+input[type="file"]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #444;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button :hover {
+  background: #121212;
+}
+
+*/
+/*--------------------------------------*/
 .Profile_Container-heading {
   width: 100%;
   padding: 1vw 0.5vw;
@@ -922,28 +1011,71 @@ label {
   gap: 10px;
   width: 100%;
   height: 40vh;
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   padding: 0.5vw 1vw;
 }
 .Profile_Photo {
-  width: 25%;
+  position: relative;
+  width: 23%;
   height: 80%;
-  border: 2px solid red;
   border-radius: 50%;
 }
 .Profile_Photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .Profile_Details {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   width: 75%;
   height: 90%;
-  border: 2px solid red;
 }
-
+.Profile_Details h6 {
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.Profile_Details h1 {
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  color: #fff;
+  font-size: 6rem;
+}
+.Profile_Details h4 {
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  color: white;
+}
+.pic_Upload {
+  position: relative;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #4444444d;
+  display: none;
+}
+.Profile_Photo:hover > .pic_Upload {
+  display: block;
+}
+.ri-edit-2-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  color: #fff;
+}
 .Uploaded_Album_Section {
   display: flex;
   flex-direction: column;
@@ -951,7 +1083,7 @@ label {
   width: 100%;
   height: 60vh;
   margin-top: 1vw;
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   padding: 0.5vw 0.5vw;
 }
 .Uploaded_Album_Section-Heading_section {
@@ -974,6 +1106,18 @@ label {
   color: #d0c9c9;
   font-weight: 800;
 }
+.UploadAlbum_Wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 85%;
+  background-color: #4444;
+  padding: 0 1vw;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 .Album_box {
   display: flex;
   flex-direction: column;
@@ -987,6 +1131,16 @@ label {
   background-color: #171717;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 0.5vw 0.5vw;
+}
+.Album_box>a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
 .AlbumPoster {
   width: 90%;
@@ -1023,7 +1177,9 @@ label {
   width: 100%;
   padding: 2vw 1vw;
   border: 6px solid green;
+  background-color: transparent;
 }
+
 .AlbumDetail_Container_Poster-Section {
   display: flex;
   gap: 10px;
@@ -1082,7 +1238,7 @@ label {
   gap: 10px;
 }
 
-.AlbumDetail_Musics{
+.AlbumDetail_Musics {
   gap: 10px;
   width: 100%;
   padding: 1vw 0.3vw;
@@ -1096,45 +1252,45 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   /* border: 1px solid #dddddd; */
   text-align: left;
   padding: 8px;
   color: white;
-  
 }
-th{
+th {
   border-bottom: 2px solid white;
 }
-#row{
+#row {
   margin-top: 1vw;
 }
-#row:hover{
+#row:hover {
   background-color: #444;
 }
-.index{
+.index {
   width: 5%;
 }
-.mytitle{
+.mytitle {
   width: 40%;
 }
-.music_poster_title{
+.music_poster_title {
   display: flex;
   gap: 10px;
   height: 10vh;
 }
-.music_poster{
+.music_poster {
   width: 25%;
-  height:100%;
+  height: 100%;
   border: 3px solid black;
 }
-.music_poster img{
+.music_poster img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-.music_title{
+.music_title {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1142,6 +1298,6 @@ th{
   width: 75%;
   height: 100%;
 }
-.music_title>h4{
+.music_title > h4 {
   font-size: 1.2vw;
 }

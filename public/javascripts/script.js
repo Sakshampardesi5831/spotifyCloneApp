@@ -53,14 +53,6 @@ audio.addEventListener("timeupdate",function(event){
     }
 })*/
 
-
-
-
-
-
-
-
-
 /**---------------------------------------------------------------------------------------------------- */
 /*let playIcon=document.getElementById("playIcon").addEventListener("click",function(){
     audio.play();
@@ -74,3 +66,12 @@ let pauseIcon=document.getElementById("pauseIcon").addEventListener("click",func
     document.getElementById("pauseIcon").style.display="none";
     document.getElementById("playIcon").style.display="block";
 });*/
+let overlayer=document.querySelector(".overlayer");
+let close=document.getElementById('close').addEventListener("click",function(){
+    overlayer.style.display="none"
+    document.body.style.overflowY="auto"
+})
+let edit=document.getElementById("edit").addEventListener("click",function(){
+    overlayer.style.display="initial"
+    document.body.style.overflowY="hidden"
+})

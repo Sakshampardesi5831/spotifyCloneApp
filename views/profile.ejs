@@ -1,24 +1,50 @@
 <% include ./partials/sideNavheader.ejs %>
     <div class="Profile-Container">
-        <div class="Profile_Container-heading"></div>
+      <!-- <% include ./partials/profileHeader.ejs %> -->
         <div class="Profile_Container-section">
           <div class="Profile_Photo_Detail"></div>
           <div class="Profile_Photo-section">
-             <div class="Profile_Photo"><img src="" alt=""></div>
-             <div class="Profile_Details"></div>
+             <div class="Profile_Photo">
+              <img src="/audioPosterFile/<%=user.profilePic%>" alt="">
+              <div class="pic_Upload"><i id="edit" class="ri-edit-2-line"></i></div>
+            </div>
+             <div class="Profile_Details">
+              <h6>Profile</h6>
+              <h1><%=user.username%></h1>
+              <h4><%=user.album.length%> &nbsp; Public PlayList . 20 following</h4>
+            </div>
           </div>
           <div class="Uploaded_Album_Section"> 
              <div class="Uploaded_Album_Section-Heading_section"><h3>Your Uploaded PlayList</h3>
                <a href="/viewAllAlbum">viewAll</a>
              </div>
-            <%user.album.forEach(function(elem){%>
-                <div class="Album_box">
-                    <div class="AlbumPoster">
-                       <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="">
-                    </div>
-                    <div class="AlbumName"><h3><%=elem.albumName%></h3></div>
-                </div>
-            <%})%> 
+            <div class="UploadAlbum_Wrapper">
+              <%if(user.album.length == 0){%>
+                    <h1>No File Uploaded</h1>
+              <%} else {%>
+                <%user.album.forEach(function(elem){%>
+                  <div class="Album_box">
+                    <a href="/albumMusicUpload/<%=elem._id%>">
+                      <div class="AlbumPoster">
+                        <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="">
+                     </div>
+                     <div class="AlbumName"><h3><%=elem.albumName%></h3></div>
+                    </a>  
+                  </div>
+                <%})%> 
+              <%}%>
+              
+            </div>
+          </div>
+          <div class="overlayer">
+             <div class="model-container">
+              <i class="ri-close-fill" id="close"></i>
+                 <form action="/uploadPic" id="uploadPic" method="post" enctype="multipart/form-data">
+                     <label for="profile">Upload your Profile Photo</label>
+                     <input type="file" id="profile" name="profile" >
+                     <button>Save</button>
+                 </form>
+             </div>
           </div>
         </div>
     </div>

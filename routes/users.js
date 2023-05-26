@@ -12,6 +12,9 @@ var userSchema= mongoose.Schema({
   email:String,
   password:String,
   gender:String,
+  profilePic:{
+    type:String,
+  },
   uploadFiles:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"music"
