@@ -75,3 +75,10 @@ let edit=document.getElementById("edit").addEventListener("click",function(){
     overlayer.style.display="initial"
     document.body.style.overflowY="hidden"
 })
+
+function nextPage(){
+    window.history.forward();
+}
+function prevPage(){
+    window.history.back();
+}

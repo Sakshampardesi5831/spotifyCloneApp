@@ -26,6 +26,18 @@ var userSchema= mongoose.Schema({
   album:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"album"
+   }],
+   library:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"album"
+   }],
+   likeSongs:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"album"
+   }],
+   follow:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"album"
    }]
 })
 userSchema.plugin(plm);

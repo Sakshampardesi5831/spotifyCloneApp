@@ -77,14 +77,19 @@ router.post("/uploadPic",isLoggedIn,config.single("profile"), async function(req
 })
 /*--------------------------------------------------------Secondary Routes---------------------------------------* */
 router.get("/dashboard", isLoggedIn,async function(req,res,next){
-    let user= await userModel.findOne({username:req.session.passport.user}).populate("album");
-    let music=await musicSchema.find().limit(4);
-    console.log(user);
+    let user= await userModel.findOne({username:req.session.passport.user}).populate("library");
+    // console.log(user);
+    let music=await musicSchema.find().limit(1).populate("albumName");
+    let sponsored=await musicSchema.find().limit(1);
+    let allAlbum=await album.find().limit(4).populate("mymusic");
+    //  console.log(allAlbum);
+    // console.log(user);
     // let currentSongId=user.recentSong._id;
     // console.log(currentSongId);
     // let recent =await recentPlayed.findOne({_id:currentSongId}).populate("musicPlayed");
     // console.log(recent);
-    res.render("dashboard",{music:music,user:user});
+    console.log(music);
+    res.render("dashboard",{music:music,user:user,allAlbum:allAlbum,sponsored:sponsored});
 });
 router.get("/upload",isLoggedIn, async function(req,res){
    let user=await userModel.findOne({username:req.session.passport.user});
@@ -150,7 +155,8 @@ config.single("albumPoster"),isLoggedIn,async function(req,res,next){
   let user=await userModel.findOne({username:req.session.passport.user});
    let data={
     albumName:req.body.albumName,
-    albumPoster:req.file.filename
+    albumPoster:req.file.filename,
+    albumCategory:req.body.albumCategory
    }
    let myalbum=await album.create(data);
    user.album.push(myalbum._id);
@@ -165,12 +171,14 @@ router.get("/albumMusicUpload/:id",isLoggedIn, async function(req,res,next){
 });
 router.post("/UploadAlbumMusic/:id",isLoggedIn,config.array("file",2),async function(req,res,next){
     let myalbum=await album.findById(req.params.id);
+    const id=req.params.id;
     console.log(myalbum);
     let uploadedData={
       songName:req.body.songName,
       songAlbum:req.body.songAlbum,
       songArtist:req.body.songArtist,
-      songPosterFile:req.files.map((file)=>file.filename)    
+      songPosterFile:req.files.map((file)=>file.filename),
+      albumName:id
      };
      let musicFile=await musicSchema.create(uploadedData);
      console.log(musicFile);
@@ -179,12 +187,28 @@ router.post("/UploadAlbumMusic/:id",isLoggedIn,config.array("file",2),async func
      res.redirect("/dashboard");
 })
 //this router is for detail of album
-router.get("/album/:id", async function(req,res,next){
+router.get("/album/:id",isLoggedIn,async function(req,res,next){
+     let user=await userModel.findOne({username:req.session.passport.user}).populate("library");
     let myalbum=await album.findById(req.params.id).populate("mymusic");
     console.log(myalbum);
-    res.render("albumDetail",{myalbum:myalbum});
+    const id=req.params.id;
+    res.render("albumDetail",{myalbum:myalbum,id:id,user:user});
 });
 
+router.get("/userLibrary/:id",isLoggedIn, async function(req,res,next){
+    let user=await userModel.findOne({username:req.session.passport.user});
+    user.library.push(req.params.id);
+    user.save();
+    res.redirect("/dashboard");
+})
+router.get("/deletePlaylist/:id",isLoggedIn, async function(req,res,next){
+    let user=await userModel.findOne({username:req.session.passport.user});
+    const id=  user.library.indexOf(req.params.id);
+    console.log(id);
+    user.library.splice(id,1);
+    user.save();
+    res.redirect("/dashboard");
+})
 //LOGGED FUNCTION
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {

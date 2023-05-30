@@ -1,6 +1,5 @@
 <% include ./partials/sideNavheader.ejs %>
 <div class="AlbumDetail_Container">
-    <% include ./partials/profileHeader.ejs %>
     <div class="AlbumDetail_Container_Poster-Section">
         <div class="AlbumDetail_Poster">
             <img src="/audioPosterFile/<%=myalbum.albumPoster%>" alt="album_Poster">
@@ -11,6 +10,11 @@
             </div>
             <div class="AlbumDetail_PosterName">
                 <h1><%=myalbum.albumName%></h1>
+            </div>
+            <div class="AlbumDetail_AllIcons">
+                <button id="follow" ><a href="">follow</a></button>
+                <a href="" id="heart"><i class="ri-heart-line"></i></a>
+                <a href="/userLibrary/<%=id%>" id="playlist"><i class="ri-play-list-line"></i></a>
             </div>
         </div>
     </div>

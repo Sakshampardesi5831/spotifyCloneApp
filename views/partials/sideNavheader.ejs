@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DASHBOARD</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -28,5 +29,22 @@
             >
           </div>
         </div>
-        <div class="dashboardUserPlaylist"></div>
+        <div class="dashboardUserPlaylist">
+           <div class="dashboardUserPlaylist_Header">
+              <div class="dashboardUserPlaylist_Header_section-1">
+                <div class="dashboardUserPlaylist_heading">
+                  <i class="ri-align-justify"></i>
+                  <h4>Your Library</h4>
+                </div>
+                <i class="ri-add-line"></i>
+              </div>
+           </div>
+           <div class="dashboardUserPlaylist_songs">
+            
+            <%user.library.forEach(function(elem){%>
+              <h4><a href=""><span><%=elem.albumName%></span> <span id="dot">.</span> <span><%=elem.albumCategory%></span></a></h4>
+               <h4><a href="/deletePlaylist/<%=elem._id%>"><i class="ri-close-line"></i></a></h4>
+            <%})%>
+           </div>
+        </div>
       </div>
