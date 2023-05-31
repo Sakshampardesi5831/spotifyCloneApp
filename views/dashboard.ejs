@@ -1,83 +1,132 @@
 <% include ./partials/sideNavheader.ejs %>
-      <div class="dashboardSection2">
-        <div class="dashboardNavSection">
-           <div class="SECTION-1">
-              <i class="ri-arrow-left-s-line" onclick=prevPage() id="left"></i>
-              <i class="ri-arrow-right-s-line" onclick=nextPage()  id="right" ></i>
-           </div>
-           <div class="SECTION-2">
-            <a href="/profile" id="profile">
-              <div class="SECTION-2_IMG">
-                <img src="/audioPosterFile/<%=user. profilePic%>" alt="Profile Pic">
-              </div>
-            </a>
-           </div>
+<div class="dashboardSection2">
+  <div class="dashboardNavSection">
+    <div class="SECTION-1">
+      <i class="ri-arrow-left-s-line" onclick="prevPage()" id="left"></i>
+      <i class="ri-arrow-right-s-line" onclick="nextPage()" id="right"></i>
+    </div>
+    <div class="SECTION-2">
+      <a href="/profile" id="profile">
+        <div class="SECTION-2_IMG">
+          <img src="/audioPosterFile/<%=user. profilePic%>" alt=""/>
         </div>
-        <div class="dashBoardSectionsponseredSection">
-            <%sponsored.forEach(function(elem){%>
-              <div class="dashBoardSectionsponseredSection_photoSection">
-                <div class="dashBoardSectionsponseredSection_poster"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
-              </div>
-              <div class="dashBoardSectionsponseredSection_musicSection">
-                 <div class="dashBoardSectionsponseredSection_heading"><h5>public playlist</h5></div>
-                 <div class="dashBoardSectionsponseredSection_musicName">
-                      <h1><%=elem.songName%></h1>
-                 </div>
-                 <div class="dashBoardSectionsponseredSection_musicDetail">
-                    <h3><a href="/album/<%=elem.albumName._id%>"><%=elem.songAlbum%></a></h3>
-                    <span>:</span>
-                    <h3><%=elem.songArtist%></h3>
-                 </div>
-                 <div class="dashBoardSectionsponseredSection_buttons">
-                     <button id="button"><a href="/musicDetails/<%=elem._id%>">Play</a></button>
-                    <button id="follow"><a href="">Follow</a></button>
-                 </div>
-              </div>
-            <%})%>  
-        </div>
-        <div class="dashboardSongsforYouSection">
-          <div class="viewAllSection">
-            <h3>Songs for You</h3>
-            <a href="/viewAllSongsForYou">view All</a>
-          </div>
-          <div class="dashBoardMusicSection">
-            <%music.forEach(function(elem){%>
-            <div class="dashBoardPoster" title="play the song">
-              <a href="/musicDetails/<%=elem._id%>">
-                <div class="posterPhoto">
-                  <img
-                    src="/audioPosterFile/<%=elem.songPosterFile[0]%>"
-                    alt=""
-                  />
-                </div>
-                <div class="songArtistTitle">
-                  <h3><%=elem.songName%></h3>
-                  <h4><%=elem.albumName.albumName%></h4>
-                </div>
-              </a>
-            </div>
-            <%})%>
-          </div>
-         <!----------------------------------Here player will come------------------------------------------>
-        </div>
-        <div class="dashBoardAlbumSection">
-          <div class="dashboardAlbumHeading">
-            <h3>ALBUMS</h3>
-            <a href="/viewAllAlbum">viewAll</a>
-          </div>
-          <%allAlbum.forEach(function(elem){%>
-            <div class="albumPoster" title="get all songs">
-              <div class="albumImage">
-                <a href="/album/<%=elem._id%>">
-                  <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="poster" />
-                  <h4><%=elem.albumName%></h4>
-                  <h4 id="subheading"><%=elem.albumCategory%></h4>
-                </a>
-              </div>
-            </div>
-          <%})%>
-          
-        </div>
-        <div class="dashboardOtherSection"></div>
+      </a>
+    </div>
+  </div>
+  <div class="dashBoardSectionsponseredSection">
+    <%sponsored.forEach(function(elem){%>
+    <div class="dashBoardSectionsponseredSection_photoSection">
+      <div class="dashBoardSectionsponseredSection_poster">
+        <img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt="" />
       </div>
+    </div>
+    <div class="dashBoardSectionsponseredSection_musicSection">
+      <div class="dashBoardSectionsponseredSection_heading">
+        <h5>public playlist</h5>
+      </div>
+      <div class="dashBoardSectionsponseredSection_musicName">
+        <h1><%=elem.songName%></h1>
+      </div>
+      <div class="dashBoardSectionsponseredSection_musicDetail">
+        <h3>
+          <a href="/album/<%=elem.albumName._id%>"><%=elem.songAlbum%></a>
+        </h3>
+        <span>:</span>
+        <h3><%=elem.songArtist%></h3>
+      </div>
+      <div class="dashBoardSectionsponseredSection_buttons">
+        <button id="button">
+          <a href="/musicDetails/<%=elem._id%>">Play</a>
+        </button>
+        <button id="follow"><a href="">Follow</a></button>
+      </div>
+    </div>
+    <%})%>
+  </div>
+  <div class="dashboardSongsforYouSection">
+    <div class="viewAllSection">
+      <h3>Songs for You</h3>
+      <a href="/viewAllSongsForYou">view All</a>
+    </div>
+    <div class="dashBoardMusicSection">
+      <%music.forEach(function(elem){%>
+      <div class="dashBoardPoster" title="play the song">
+        <a href="/musicDetails/<%=elem._id%>">
+          <div class="posterPhoto">
+            <img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt="" />
+          </div>
+          <div class="songArtistTitle">
+            <h3><%=elem.songName%></h3>
+            <h4><%=elem.albumName.albumName%></h4>
+          </div>
+        </a>
+      </div>
+      <%})%>
+    </div>
+    <!----------------------------------Here player will come------------------------------------------>
+      <div class="dashBoardMusicPlayer_Section">
+        <%if(!user.isMusic){%>
+          <h4>NO SONG IS PLAYING</h4>
+        <%} else{%>
+          <div class="songDetailsSection">
+            <div class="songPhoto"><img src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[0]%>" alt=""></div>
+            <div class="songDetails">
+               <h3><%=userMusic.recentSong.songName%></h3>
+               <h5><%=userMusic.recentSong.songArtist%></h5>   
+            </div>
+            <div class="songLike"><i class="ri-heart-line"></i></div>
+         </div>
+         <div class="playButtonSection">
+          <audio src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[1]%>" type="audio/mp3"></audio>
+          <div class="audio_controls_section">
+              <div class="playbuttonsHolder">
+                  <div class="playBackward">
+                      <button><i class="ri-skip-back-line"></i></button>
+                  </div>
+                  <div class="playButton">
+                      <button id="playButton" >
+                          <i class="ri-play-fill" id="playIcon"></i>
+                      </button>
+                  </div>
+                  <div class="playForword">
+                      <button><i class="ri-skip-forward-line"></i></button>
+                  </div>
+              </div>
+              <div class="progress_container">
+                  <div class="progress_meter">
+                      <div class="current_time" id="current_time" >0:00</div>
+                      <div class="total_time" id="total_time" >0:00</div>
+                  </div>
+                  <div class="progress_div" id="progress_div">
+                      <div class="progress" id="progress"></div>
+                  </div>
+              </div>
+          </div> 
+         </div>
+         <div class="audio_other_controls">
+              <h1>Other controls</h1>
+         </div>
+        <%}%>
+     </div>
+    <!-------------------------------------------------------------------------------------------------->
+  </div>
+  <div class="dashBoardAlbumSection">
+    <div class="dashboardAlbumHeading">
+      <h3>ALBUMS</h3>
+      <a href="/viewAllAlbum">viewAll</a>
+    </div>
+    <%allAlbum.forEach(function(elem){%>
+    <div class="albumPoster" title="get all songs">
+      <div class="albumImage">
+        <a href="/album/<%=elem._id%>">
+          <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="poster" />
+          <h4><%=elem.albumName%></h4>
+          <h4 id="subheading"><%=elem.albumCategory%></h4>
+        </a>
+      </div>
+    </div>
+    <%})%>
+  </div>
+  <div class="dashboardOtherSection"></div>
+</div>
 <% include ./partials/sideNavFooter.ejs %>

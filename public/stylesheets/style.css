@@ -464,7 +464,6 @@ label {
   width: 40%;
   height: 100%;
   border-radius: 50%;
-  background-color: red;
 }
 .SECTION-2_IMG img{
   width: 100%;
@@ -489,16 +488,20 @@ label {
   left: 0%;
   width: 30%;
   height: 100vh;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+ box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 20px;
+ 
 }
 .dashboardSection2 {
   position: relative;
   width: 70%;
   height: 100vh;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   overflow-y: auto;
   padding: 0vw 1.5vw;
-  background-color: #121212;
+  border-radius: 20px;
+  background-color: #171717;
 }
 .dashboardSection2::-webkit-scrollbar{
   width: 0.5em;
@@ -523,7 +526,10 @@ label {
   position: relative;
   width: 100%;
   height: 20vh;
-  border: 3px solid greenyellow;
+  /* border: 3px solid greenyellow; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #171717;
+  border-radius: 20px;
 }
 .dashboardNavContainer > .home {
   width: 100%;
@@ -725,21 +731,23 @@ label {
   position: fixed;
   bottom: 0%;
   left: 0%;
+  padding: 0.5vw 0.5vw;
 }
 #pauseIcon {
   display: none;
 }
 .songDetailsSection {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 25%;
   height: 15vh;
+  padding: 1vw 1vw;
 }
 .songPhoto {
   width: 25%;
   height: 12vh;
-  border: 2px solid rebeccapurple;
+  /* border: 2px solid rebeccapurple; */
   border-radius: 10px;
 }
 .songPhoto img {
@@ -752,19 +760,18 @@ label {
 .songDetails {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 50%;
   height: 12vh;
+  gap: 0.5vw;
 }
 .songDetails > h3 {
   width: 100%;
-  padding: 0.5vw 1vw;
   color: white;
 }
 .songDetails > h5 {
   width: 100%;
-  padding: 0.5vw 1vw;
   color: #7f7a7a;
 }
 .songLike {
@@ -870,14 +877,17 @@ label {
 .dashboardUserPlaylist{
   display: flex;
   flex-direction: column;
-
   gap: 10px;
   width: 100%;
   height: 80vh;
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   overflow: hidden;
   overflow-y: auto;
   padding:  0 0.5vw;
+  background-color: #171717;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 0.5vw;
+  border-radius: 20px;
 }
 .dashboardUserPlaylist_Header{
   width: 100%;
@@ -1006,7 +1016,7 @@ label {
 /*-*------------------------------------------------------------------------------------*/
 .dashboardOtherSection {
   width: 100%;
-  height: 20vh;
+  height: 14vh;
   border: 3px solid #fff;
 }
 /*-------------------------------------ALBUM UPLOAD CSS-----------------------------------------------------*/
@@ -1150,7 +1160,7 @@ label {
   position: relative;
   width: 70%;
   min-height: 100vh;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .overlayer {
   position: fixed;
@@ -1260,7 +1270,7 @@ input[type="file"]::file-selector-button :hover {
 .Profile_Container-heading {
   width: 100%;
   padding: 1vw 0.5vw;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .Profile_Photo-section {
   display: flex;
@@ -1337,12 +1347,14 @@ input[type="file"]::file-selector-button :hover {
 .Uploaded_Album_Section {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
+  gap: 20px;
   width: 100%;
   height: 60vh;
-  margin-top: 1vw;
+  /* margin-top: 1vw; */
   /* border: 5px solid blue; */
   padding: 0.5vw 0.5vw;
+  overflow-y: auto;
 }
 .Uploaded_Album_Section-Heading_section {
   display: flex;
@@ -1352,7 +1364,7 @@ input[type="file"]::file-selector-button :hover {
   width: 100%;
   /* border: 3px solid red; */
   color: #fff;
-  font-size: 1.5vw;
+  font-size: 1.0vw;
 }
 .Uploaded_Album_Section-Heading_section > a {
   text-decoration: none;
@@ -1368,7 +1380,7 @@ input[type="file"]::file-selector-button :hover {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 85%;
+  height: 70%;
   background-color: #4444;
   padding: 0 1vw;
   border-radius: 20px;
@@ -1382,8 +1394,8 @@ input[type="file"]::file-selector-button :hover {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 25%;
-  height: 85%;
+  width: 20%;
+  height: 80%;
   /* border: 2px solid white; */
   border-radius: 20px;
   background-color: #171717;
@@ -1415,7 +1427,7 @@ input[type="file"]::file-selector-button :hover {
 }
 .AlbumName {
   width: 90%;
-  font-size: 1.2vw;
+  font-size: 1.0vw;
   /* background-color: #1ccc5b; */
   color: white;
 }
@@ -1425,8 +1437,8 @@ input[type="file"]::file-selector-button :hover {
   position: relative;
   width: 70%;
   min-height: 100vh;
-  background-color: #121212;
-  border: 2px solid pink;
+  background-color: #171717;
+  /* border: 2px solid pink; */
 }
 .Profile_header {
   position: sticky;
@@ -1481,6 +1493,7 @@ input[type="file"]::file-selector-button :hover {
   font-weight: 400;
 }
 .AlbumDetail_Container_Music-Section {
+  position: relative;
   width: 100%;
   min-height: 47vh;
   margin-top: 0.5vw;
@@ -1590,5 +1603,12 @@ th {
   color:white;
   text-decoration:none;
 }
-
+#playMusicIcon{
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+}
+#playMusicIcon:hover{
+  color: #1ccc5b;
+}
 /*------------------------------------------------LIBRARY CSS---------------------------------------------------------*/

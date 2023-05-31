@@ -1,4 +1,4 @@
-/*let audio=document.querySelector("audio");
+let audio=document.querySelector("audio");
 let play=document.getElementById("playIcon");
 let totalTime=document.getElementById("total_time");
 let current_Time=document.getElementById("current_time");
@@ -51,7 +51,7 @@ audio.addEventListener("timeupdate",function(event){
     if(currentTime){
         current_Time.textContent=curr_du;
     }
-})*/
+})
 
 /**---------------------------------------------------------------------------------------------------- */
 /*let playIcon=document.getElementById("playIcon").addEventListener("click",function(){
@@ -75,6 +75,11 @@ let edit=document.getElementById("edit").addEventListener("click",function(){
     overlayer.style.display="initial"
     document.body.style.overflowY="hidden"
 })
+let heart=document.querySelector(".ri-play-list-line")
+heart.addEventListener("click",function(){
+    console.log("hello");
+})
+
 
 function nextPage(){
     window.history.forward();
@@ -82,3 +87,4 @@ function nextPage(){
 function prevPage(){
     window.history.back();
 }
+

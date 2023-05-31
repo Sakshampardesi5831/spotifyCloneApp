@@ -40,11 +40,14 @@
               </div>
            </div>
            <div class="dashboardUserPlaylist_songs">
-            
-            <%user.library.forEach(function(elem){%>
-              <h4><a href=""><span><%=elem.albumName%></span> <span id="dot">.</span> <span><%=elem.albumCategory%></span></a></h4>
-               <h4><a href="/deletePlaylist/<%=elem._id%>"><i class="ri-close-line"></i></a></h4>
-            <%})%>
+            <% if(user.library.length == 0){%>
+                <h4 class="dashboardUserPlaylist_songs_title">NO SONGS SAVED !</h4>
+            <%}else{%>
+               <%user.library.forEach(function(elem){%>
+                <h4><a href=""><span><%=elem.albumName%></span> <span id="dot">.</span> <span><%=elem.albumCategory%></span></a></h4>
+                 <h4><a href="/deletePlaylist/<%=elem._id%>"><i class="ri-close-line"></i></a></h4>
+               <%})%>
+            <%}%>
            </div>
         </div>
       </div>

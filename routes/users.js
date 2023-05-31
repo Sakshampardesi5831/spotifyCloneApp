@@ -21,7 +21,11 @@ var userSchema= mongoose.Schema({
   }],
   recentSong:{
     type:mongoose.Schema.Types.ObjectId,
-    ref:"recent"
+    ref:"music"
+  },
+  isMusic:{
+    type:Boolean,
+    default:false,
   },
   album:[{
     type:mongoose.Schema.Types.ObjectId,

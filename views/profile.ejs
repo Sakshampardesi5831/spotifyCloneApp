@@ -1,6 +1,19 @@
 <% include ./partials/sideNavheader.ejs %>
     <div class="Profile-Container">
       <!-- <% include ./partials/profileHeader.ejs %> -->
+      <div class="dashboardNavSection">
+        <div class="SECTION-1">
+          <i class="ri-arrow-left-s-line" onclick="prevPage()" id="left"></i>
+          <i class="ri-arrow-right-s-line" onclick="nextPage()" id="right"></i>
+        </div>
+        <div class="SECTION-2">
+          <a href="/profile" id="profile">
+            <div class="SECTION-2_IMG">
+              <img src="/audioPosterFile/<%=user. profilePic%>" alt=""/>
+            </div>
+          </a>
+        </div>
+      </div>
         <div class="Profile_Container-section">
           <div class="Profile_Photo_Detail"></div>
           <div class="Profile_Photo-section">
@@ -11,12 +24,12 @@
              <div class="Profile_Details">
               <h6>Profile</h6>
               <h1><%=user.username%></h1>
-              <h4><%=user.album.length%> &nbsp; Public PlayList . 20 following</h4>
+              <h4><%=user.album.length%> &nbsp; Public PlayList</h4>
                <div id="uploadButton"><button><a href="/albumUpload">Upload Album</a></button></div>
             </div>
           </div>
           <div class="Uploaded_Album_Section"> 
-             <div class="Uploaded_Album_Section-Heading_section"><h3>Your Uploaded PlayList</h3>
+             <div class="Uploaded_Album_Section-Heading_section"><h3>Your Created Albums</h3>
                <a href="/viewAllAlbum">viewAll</a>
              </div>
             <div class="UploadAlbum_Wrapper">
@@ -48,6 +61,46 @@
              </div>
           </div>
         </div>
+        <div class="dashBoardMusicPlayer_Section">
+          <div class="songDetailsSection">
+             <div class="songPhoto"><img src="" alt=""></div>
+             <div class="songDetails">
+                <h3>song name</h3>
+                <h5>SongArtist</h5>   
+             </div>
+             <div class="songLike"><i class="ri-heart-line"></i></div>
+          </div>
+          <div class="playButtonSection">
+           <audio src="" type="audio/mp3"></audio>
+           <div class="audio_controls_section">
+               <div class="playbuttonsHolder">
+                   <div class="playBackward">
+                       <button><i class="ri-skip-back-line"></i></button>
+                   </div>
+                   <div class="playButton">
+                       <button id="playButton" >
+                           <i class="ri-play-fill" id="playIcon"></i>
+                       </button>
+                   </div>
+                   <div class="playForword">
+                       <button><i class="ri-skip-forward-line"></i></button>
+                   </div>
+               </div>
+               <div class="progress_container">
+                   <div class="progress_meter">
+                       <div class="current_time" id="current_time" >0:00</div>
+                       <div class="total_time" id="total_time" >0:00</div>
+                   </div>
+                   <div class="progress_div" id="progress_div">
+                       <div class="progress" id="progress"></div>
+                   </div>
+               </div>
+           </div> 
+          </div>
+          <div class="audio_other_controls">
+               <h1>Other controls</h1>
+          </div>
+       </div>
     </div>
     <!-- <% user.album.forEach(function(elem){%>
         <a href="/albumMusicUpload/<%=elem.id%>">elem</a>
