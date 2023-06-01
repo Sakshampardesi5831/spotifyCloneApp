@@ -157,7 +157,7 @@ body::-webkit-scrollbar-thumb {
   width: 70%;
   min-height: 100vh;
   background-color: #121212;
-  background-image: url("https://www.howtobecomearockstarphotographer.com/wp-content/uploads/2014/08/Nine_Inch_Nails_by_Matthias_Hombauer-4-e1407384673442.jpg");
+  background-image: url("../images/marcus-wallis-6lGYobfLA9g-unsplash.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -298,7 +298,7 @@ body::-webkit-scrollbar-thumb {
   width: 50%;
   min-height: 100vh;
   background-color: #444;
-  background-image: url("../images/inline_image_preview-removebg-preview.png");
+  background-image: url("../images/rinke-dohmen-_9a9fzhkMGI-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-color: #1ccc5b;
@@ -1612,3 +1612,181 @@ th {
   color: #1ccc5b;
 }
 /*------------------------------------------------LIBRARY CSS---------------------------------------------------------*/
+/*---------------FRONT PAGE OF THE SPOTIFY--------------------------------------------------------------------------------*/
+.indexContainer{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #121212;
+  background-image: url("../images/anthony-delanoix-hzgs56Ze49s-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+.indexOverlayer{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0%;
+  left:0%;
+  right: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #00000083;
+  padding: 0vw 4vw;
+}
+.indexWrapper{
+  display: flex;
+  width: 100%;
+  height: 70%;
+  /* background-color: #121212; */
+}
+.indexSection-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  /* background-color: red; */
+  border-right: 2px solid white;
+}
+.indexIcons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5vw 0.5vw;
+  /* background-color:blue; */
+  gap: 10px;
+  font-size: 1.5vw;
+}
+#spotify{
+  color: #fff !important;
+}
+.indexIcons>h3{
+  font-size: 2.5vw;
+  color: white;
+}
+.indexSignUpButton{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5vw 0.5vw;
+  /* background-color: #061832de; */
+}
+.indexSignUpButton>button{
+  width: 70%;
+  padding: 1.0vw 0.5vw;
+  background-color: #1ccc5b;
+  font-size: 1.5vw;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+}
+.indexSignUpButton>button>a{
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+
+}
+.indexSubHeading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 1.5vw 0.5vw;
+  /* background-color: green; */
+}
+.line{
+  width: 10%;
+  height: 2px;
+  background-color: white;
+}
+.Subheading{
+  color: white;
+  font-weight: 500;
+}
+.indexLoginButton{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5vw 0.5vw;
+  /* background-color: #061832de; */
+}
+.indexLoginButton>button{
+  width: 70%;
+  padding: 1.0vw 0.5vw;
+  background-color: #fff;
+  font-size: 1.5vw;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+}
+.indexLoginButton>button>a{
+  letter-spacing: 5px;
+  font-weight: 700;
+  color:#000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.indexSection-2{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5vw 0.5vw;
+  width: 60%;
+  height: 100%;
+  /* background-color: #000; */
+}
+.indexSection-2_ContentHeading{
+  width: 100%;
+  /* background-color: red; */
+  padding: 0.5vw 1.5vw;
+}
+.indexSection-2_ContentHeading>h1{
+   font-size: 3.5vw;
+   color: #1ccc5b;
+}
+.indexSection-2_ContentHeading>h3{
+  color: #fff;
+  font-weight: 400;
+}
+.indexSection-2_ContentHeading-details{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  padding: 0vw 0.5vw;
+  /* background-color: aqua; */
+  font-size: 1.5vw;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5vw;
+}
+.indexSection-2_ContentHeading-details>.ri-check-line{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  color: #1ccc5b;
+  font-weight: 800;
+}
+
+#head-1{
+  padding: 1.5vw 1.5vw;
+  /* background-color: gray; */
+}
+#head-2{
+  padding: 1.5vw 1.5vw;
+}
+#head-3{
+  padding:0.5vw 1.5vw;
+}

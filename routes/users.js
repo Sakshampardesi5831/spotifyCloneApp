@@ -1,11 +1,12 @@
 require("dotenv").config({path:"./.env"});
 const mongoose=require("mongoose");
 var plm=require("passport-local-mongoose");
-
 mongoose.connect("mongodb://localhost/spotifyDb").then(function(){
   console.log("Connected to db");
 })
-
+// mongoose.connect(`mongodb+srv://sakshampardesi5831:sakshampardesi123456@cluster0.svpwpzm.mongodb.net/?retryWrites=true&w=majority`).then(function(){
+//   console.log("Connected to db");
+// })
 var userSchema= mongoose.Schema({
   username:String,
   name:String,

@@ -26,10 +26,9 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 router.get("/register",function(req,res,next){
-  res.render("index");
+  res.render("register");
 })
 router.post("/register",function(req,res,next){
-  try {
     var newUser=new userModel({
       username:req.body.username,
       name:req.body.name.name,
@@ -42,11 +41,6 @@ router.post("/register",function(req,res,next){
           res.redirect("/dashboard");
        })
     })
-  } catch (error) {
-     res.json({
-      message:error,
-     })
-  } 
 })
 router.get("/login",function(req,res){
     res.render("login");

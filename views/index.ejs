@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>REGISTER</title>
+    <title>HOME PAGE</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-     <div id="main-box">
-        <div class="spotify-form-section">
-            <div class="spotify-logo">
-              <i class="ri-spotify-fill"></i>
-               <h1 class="title">Spotify</h1>
-            </div>
-            <div class="spotify-form">
-                <form action="/register" class="form-section" method="post">
-                  <div class="nested-form">
-                    <input type="text" name="username" id="username" placeholder="Username">
-                    <input type="text" name="name" id="name" placeholder=" Full Name">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="password" name="password" id="password" placeholder="Password">
+     <div class="indexContainer">
+      <div class="indexOverlayer">
+         <div class="indexWrapper">
+             <div class="indexSection-1">
+                  <div class="indexIcons">
+                    <i class="ri-spotify-fill" id="spotify"></i>
+                    <h3>Spotify</h3>
                   </div>
-                  <div class="gender"> 
-                      <select id="genderSelect" name="gender">
-                          <option value="" selected>Select the gender</option>
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                          <option value="transgender">Transgender</option>
-                      </select>
+                  <div class="indexSignUpButton">
+                       <button><a href="/register">Sign Up</a></button>
                   </div>
-                  <div class="button-submit">
-                    <button class="button">Sign up</button>
+                  <div class="indexSubHeading">
+                      <div class="line"></div>
+                      <div class="Subheading">Already Have an Account</div>
+                      <div class="line"></div>
                   </div>
-                </form>
-                <div class="termsAndcondition">
-                   <div class="terms">
-                    <p>by clicking on <span>on sign up</span> you agree to spotify terms and condition</p>
-                   </div>
-                   <div class="condition">
-                     <p>To Learns more about how spotify collects,uses,shares and protects your personal data please
-                       read Spotify's <span>Privacy Policy</span>
-                     </p>
-                   </div>
-                </div>
-            </div>
-        </div>
-        <div class="spotify-poster-section">
-            <div class="small_heading">
-                <h4>Already have an Account?</h4>
-                <button class="buttonLogin"><a href="/login">Login</a></button>
-            </div> 
-        </div>
+                  <div class="indexLoginButton">
+                    <button><a href="/login">Log In</a></button>
+                 </div>
+             </div>
+             <div class="indexSection-2">
+                 <div class="indexSection-2_ContentHeading" id="head-1">
+                     <h1>Get The right Music,</h1>
+                     <h1>right now</h1>
+                 </div>
+                 <div class="indexSection-2_ContentHeading" id="head-2">
+                     <h3>Listen to million songs for free.</h3>
+                 </div>
+                 <div class="indexSection-2_ContentHeading" id="head-3" >
+                      <div class="indexSection-2_ContentHeading-details">
+                        <i class="ri-check-line"></i>
+                        <h5>Search & discover music you'll love</h5>
+                      </div>
+                      <div class="indexSection-2_ContentHeading-details">
+                        <i class="ri-check-line"></i>
+                        <h5>Create Playlist for your favourite music</h5>
+                      </div>
+                 </div>
+             </div>
+         </div>
+      </div>
      </div>
      <script src="../javascripts/script.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
