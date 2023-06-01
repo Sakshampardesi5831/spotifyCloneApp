@@ -26,7 +26,7 @@
             </div>
             <div class="AlbumDetail_AllIcons">
                 <button id="follow" title="click to follow" ><a href="/follow/<%=id%>">follow</a></button>
-                <a href="/like/<%=id%>"  id="heart" title="like"><i class="ri-heart-line"></i></a>
+                <!-- <a href="/like/<%=id%>"  id="heart" title="like"><i class="ri-heart-line"></i></a> -->
                 <a href="/userLibrary/<%=id%>" title="add to library" id="playlist"><i class="ri-play-list-line"></i></a>
             </div>
         </div>
@@ -48,6 +48,7 @@
                       <div class="music_poster"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
                       <div class="music_title">
                           <h4><%=elem.songName%></h4>
+                          <a href="/like/<%=elem._id%>" id="heart" title="like"><i class="ri-heart-line"></i></a>
                       </div>
                     </td>
                     <td><%=elem.songAlbum%></td>
@@ -59,7 +60,7 @@
         </div>
         <div class="dashBoardMusicPlayer_Section">
             <%if(!user.isMusic){%>
-              <h4>NO SONG IS PLAYING</h4>
+                <% include ./partials/dummyPlayer.ejs %>
             <%} else{%>
               <div class="songDetailsSection">
                 <div class="songPhoto"><img src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[0]%>" alt=""></div>
@@ -100,7 +101,7 @@
                   <h1>Other controls</h1>
              </div>
             <%}%>
-         </div>
+        </div>
     </div>
 </div>
 <% include ./partials/sideNavFooter.ejs %>

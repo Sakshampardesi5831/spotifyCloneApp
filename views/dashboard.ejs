@@ -66,7 +66,7 @@
     <!----------------------------------Here player will come------------------------------------------>
       <div class="dashBoardMusicPlayer_Section">
         <%if(!user.isMusic){%>
-          <h4>NO SONG IS PLAYING</h4>
+          <% include ./partials/dummyPlayer.ejs%>
         <%} else{%>
           <div class="songDetailsSection">
             <div class="songPhoto"><img src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[0]%>" alt=""></div>

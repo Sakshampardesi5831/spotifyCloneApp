@@ -33,10 +33,10 @@
                <a href="/viewAllAlbum">viewAll</a>
              </div>
             <div class="UploadAlbum_Wrapper">
-              <%if(user.album.length == 0){%>
+              <%if(userAlbum.album.length == 0){%>
                     <h1>No File Uploaded</h1>
               <%} else {%>
-                <%user.album.forEach(function(elem){%>
+                <%userAlbum.album.forEach(function(elem){%>
                   <div class="Album_box">
                     <a href="/albumMusicUpload/<%=elem._id%>">
                       <div class="AlbumPoster">
@@ -62,44 +62,49 @@
           </div>
         </div>
         <div class="dashBoardMusicPlayer_Section">
-          <div class="songDetailsSection">
-             <div class="songPhoto"><img src="" alt=""></div>
-             <div class="songDetails">
-                <h3>song name</h3>
-                <h5>SongArtist</h5>   
-             </div>
-             <div class="songLike"><i class="ri-heart-line"></i></div>
-          </div>
-          <div class="playButtonSection">
-           <audio src="" type="audio/mp3"></audio>
-           <div class="audio_controls_section">
-               <div class="playbuttonsHolder">
-                   <div class="playBackward">
-                       <button><i class="ri-skip-back-line"></i></button>
-                   </div>
-                   <div class="playButton">
-                       <button id="playButton" >
-                           <i class="ri-play-fill" id="playIcon"></i>
-                       </button>
-                   </div>
-                   <div class="playForword">
-                       <button><i class="ri-skip-forward-line"></i></button>
-                   </div>
-               </div>
-               <div class="progress_container">
-                   <div class="progress_meter">
-                       <div class="current_time" id="current_time" >0:00</div>
-                       <div class="total_time" id="total_time" >0:00</div>
-                   </div>
-                   <div class="progress_div" id="progress_div">
-                       <div class="progress" id="progress"></div>
-                   </div>
-               </div>
-           </div> 
-          </div>
-          <div class="audio_other_controls">
-               <h1>Other controls</h1>
-          </div>
+          <%if(!user.isMusic){%>
+            <!-- <h4>NO SONG IS PLAYING</h4> -->
+            <% include ./partials/dummyPlayer.ejs%>
+          <%} else{%>
+            <div class="songDetailsSection">
+              <div class="songPhoto"><img src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[0]%>" alt=""></div>
+              <div class="songDetails">
+                 <h3><%=userMusic.recentSong.songName%></h3>
+                 <h5><%=userMusic.recentSong.songArtist%></h5>   
+              </div>
+              <div class="songLike"><i class="ri-heart-line"></i></div>
+           </div>
+           <div class="playButtonSection">
+            <audio src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[1]%>" type="audio/mp3"></audio>
+            <div class="audio_controls_section">
+                <div class="playbuttonsHolder">
+                    <div class="playBackward">
+                        <button><i class="ri-skip-back-line"></i></button>
+                    </div>
+                    <div class="playButton">
+                        <button id="playButton" >
+                            <i class="ri-play-fill" id="playIcon"></i>
+                        </button>
+                    </div>
+                    <div class="playForword">
+                        <button><i class="ri-skip-forward-line"></i></button>
+                    </div>
+                </div>
+                <div class="progress_container">
+                    <div class="progress_meter">
+                        <div class="current_time" id="current_time" >0:00</div>
+                        <div class="total_time" id="total_time" >0:00</div>
+                    </div>
+                    <div class="progress_div" id="progress_div">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                </div>
+            </div> 
+           </div>
+           <div class="audio_other_controls">
+                <h1>Other controls</h1>
+           </div>
+          <%}%>
        </div>
     </div>
     <!-- <% user.album.forEach(function(elem){%>

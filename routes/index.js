@@ -58,9 +58,11 @@ router.get("/logout", function (req, res) {
   });
 });
 router.get("/profile",isLoggedIn, async function(req,res,next){
-   let user=await userModel.findOne({username:req.session.passport.user}).populate("album").limit(4);
-   console.log(user);
-   res.render("profile",{user:user});
+   let userAlbum=await userModel.findOne({username:req.session.passport.user}).populate("album").limit(4);
+   let user=await userModel.findOne({username:req.session.passport.user}).populate("library");
+   let userMusic= await userModel.findOne({username:req.session.passport.user}).populate("recentSong");
+  //  console.log(user);
+   res.render("profile",{userAlbum:userAlbum,user:user,userMusic:userMusic});
 
 })
 router.post("/uploadPic",isLoggedIn,config.single("profile"), async function(req,res,next){
@@ -80,6 +82,13 @@ router.get("/follow/:id",isLoggedIn, async function(req,res,next){
     let myuser=await user.save();
    console.log(myuser);
    res.redirect("back");
+})
+router.get("/likeSongs",isLoggedIn, async function(req,res,next){
+     let user=await userModel.findOne({username:req.session.passport.user}).populate("likeSongs");
+     let userMusic=await userModel.findOne({username:req.session.passport.user}).populate("recentSong");
+     console.log(user);
+     res.render("likeSongs",{user:user,userMusic:userMusic});
+    // res.send("like section");
 })
 router.get("/like/:id",isLoggedIn, async function(req,res,next){
     let user=await userModel.findOne({username:req.session.passport.user});

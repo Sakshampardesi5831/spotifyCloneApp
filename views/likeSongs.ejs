@@ -1,0 +1,104 @@
+<% include ./partials/sideNavheader.ejs %>
+<div class="dashboardSection2" id="likeColorChange">
+    <div class="dashboardNavSection">
+        <div class="SECTION-1">
+          <i class="ri-arrow-left-s-line" onclick="prevPage()" id="left"></i>
+          <i class="ri-arrow-right-s-line" onclick="nextPage()" id="right"></i>
+        </div>
+        <div class="SECTION-2">
+          <a href="/profile" id="profile">
+            <div class="SECTION-2_IMG">
+              <img src="/audioPosterFile/<%=user. profilePic%>" alt=""/>
+            </div>
+          </a>
+        </div>
+    </div>
+    <div class="LikeSection">
+      <div class="LikeSection_section-1">
+        <div class="LikeSection_Icon"><i class="ri-heart-fill"></i></div>
+      </div>
+      <div class="LikeSection_section-2">
+        <div class="LikeSection_head1"><h4>Playlist</h4></div>
+        <div class="LikeSection_head2"><h1>Liked Song</h1></div>
+        <div class="LikeSection_head1-ProfileSection">
+             <div class="LikeSection_Profile_photo">
+                <img src="/audioPosterFile/<%=user.profilePic%>" alt="">
+             </div>
+             <div class="LikeSection_Profile_username"><h3><%=user.username%></h3></div>
+        </div>
+      </div>
+    </div>
+    <div class="LikeTable_Section_1">
+        <table>
+            <tr>
+              <th class="index">#</th>
+              <th  class="mytitle">title</th>
+              <th class="album">album</th>
+              <th class="uploaded">uploaded</th>
+              <th></th>
+              <th class="music_duration">play</th>
+            </tr>
+              <% user.likeSongs.forEach(function(elem,index){%>
+                <tr id="row">
+                    <td><%=index+1%></td>
+                    <td class="music_poster_title">
+                      <div class="music_poster"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
+                      <div class="music_title">
+                          <h4><%=elem.songName%></h4>
+                      </div>
+                    </td>
+                    <td><%=elem.songAlbum%></td>
+                    <td>Date</td>
+                    <td><a href="" id="heart1"><i class="ri-heart-fill"></i></a></td>
+                    <td><a href="/albumDetails/<%=elem._id%>" id="playMusicIcon"><i class="ri-play-fill"></i></a></td>
+                </tr>
+              <%})%>
+                
+          </table>
+    </div>
+    <div class="dashBoardMusicPlayer_Section">
+        <%if(!user.isMusic){%>
+            <% include ./partials/dummyPlayer.ejs %>
+        <%} else{%>
+          <div class="songDetailsSection">
+            <div class="songPhoto"><img src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[0]%>" alt=""></div>
+            <div class="songDetails">
+               <h3><%=userMusic.recentSong.songName%></h3>
+               <h5><%=userMusic.recentSong.songArtist%></h5>   
+            </div>
+            <div class="songLike"><i class="ri-heart-line"></i></div>
+         </div>
+         <div class="playButtonSection">
+          <audio src="/audioPosterFile/<%=userMusic.recentSong.songPosterFile[1]%>" type="audio/mp3"></audio>
+          <div class="audio_controls_section">
+              <div class="playbuttonsHolder">
+                  <div class="playBackward">
+                      <button><i class="ri-skip-back-line"></i></button>
+                  </div>
+                  <div class="playButton">
+                      <button id="playButton" >
+                          <i class="ri-play-fill" id="playIcon"></i>
+                      </button>
+                  </div>
+                  <div class="playForword">
+                      <button><i class="ri-skip-forward-line"></i></button>
+                  </div>
+              </div>
+              <div class="progress_container">
+                  <div class="progress_meter">
+                      <div class="current_time" id="current_time" >0:00</div>
+                      <div class="total_time" id="total_time" >0:00</div>
+                  </div>
+                  <div class="progress_div" id="progress_div">
+                      <div class="progress" id="progress"></div>
+                  </div>
+              </div>
+          </div> 
+         </div>
+         <div class="audio_other_controls">
+              <h1>Other controls</h1>
+         </div>
+        <%}%>
+    </div>
+</div>
+<% include ./partials/sideNavFooter.ejs %>
