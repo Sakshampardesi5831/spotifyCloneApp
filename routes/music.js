@@ -16,5 +16,5 @@ var musicSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"album"
     }
-})
+},{timestamps:true})
 module.exports=mongoose.model("music",musicSchema);

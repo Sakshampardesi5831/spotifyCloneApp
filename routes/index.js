@@ -9,7 +9,7 @@ var config=require("../config/config")
 passport.use(new LocalStrategy(userModel.authenticate()));
 var mongoose=require("mongoose");
 const musicSchema=require("./music");
-var mongooseUrl="mongodb://localhost/spotifyDb";
+var mongooseUrl=`mongodb+srv://sakshampardesi5831:${process.env.PASSWORD}@cluster0.svpwpzm.mongodb.net/spotifyDb?retryWrites=true&w=majority`;
 const conn = mongoose.createConnection(mongooseUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
