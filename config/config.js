@@ -4,6 +4,7 @@ let crypto=require("crypto");
 let path=require("path");
 const gridFsStorage=require("multer-gridfs-storage").GridFsStorage;
 var mongooseUrl=`mongodb+srv://sakshampardesi5831:${process.env.PASSWORD}@cluster0.svpwpzm.mongodb.net/spotifyDb?retryWrites=true&w=majority`;
+// var mongooseUrl="mongodb://localhost/spotifyDb"
 const conn = mongoose.createConnection(mongooseUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -38,7 +38,7 @@
               <th class="index">#</th>
               <th  class="mytitle">title</th>
               <th class="album">album</th>
-              <th class="uploaded">uploaded</th>
+              <th></th>
               <th class="music_duration">play</th>
             </tr>
             <% myalbum.mymusic.forEach(function(elem,index){%>
@@ -48,11 +48,10 @@
                       <div class="music_poster"><img src="/audioPosterFile/<%=elem.songPosterFile[0]%>" alt=""></div>
                       <div class="music_title">
                           <h4><%=elem.songName%></h4>
-                          <a href="/like/<%=elem._id%>" id="heart" title="like"><i class="ri-heart-line"></i></a>
                       </div>
                     </td>
                     <td><%=elem.songAlbum%></td>
-                    <td>Date</td>
+                    <td><a href="/like/<%=elem._id%>" id="heart" title="like"><i class="ri-heart-line"></i></a></td>
                     <td><a href="/albumDetails/<%=elem._id%>" id="playMusicIcon"><i class="ri-play-fill"></i></a></td>
                 </tr>
             <%})%>  

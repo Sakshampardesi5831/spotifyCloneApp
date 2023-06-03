@@ -10,6 +10,7 @@ passport.use(new LocalStrategy(userModel.authenticate()));
 var mongoose=require("mongoose");
 const musicSchema=require("./music");
 var mongooseUrl=`mongodb+srv://sakshampardesi5831:${process.env.PASSWORD}@cluster0.svpwpzm.mongodb.net/spotifyDb?retryWrites=true&w=majority`;
+// var mongooseUrl="mongodb://localhost/spotifyDb"
 const conn = mongoose.createConnection(mongooseUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -84,10 +85,10 @@ router.get("/follow/:id",isLoggedIn, async function(req,res,next){
    res.redirect("back");
 })
 router.get("/likeSongs",isLoggedIn, async function(req,res,next){
-     let user=await userModel.findOne({username:req.session.passport.user}).populate("likeSongs");
+     let userLike=await userModel.findOne({username:req.session.passport.user}).populate("likeSongs");
      let userMusic=await userModel.findOne({username:req.session.passport.user}).populate("recentSong");
-     console.log(user);
-     res.render("likeSongs",{user:user,userMusic:userMusic});
+     let user= await userModel.findOne({username:req.session.passport.user}).populate("library");
+     res.render("likeSongs",{user:user,userMusic:userMusic,userLike:userLike});
     // res.send("like section");
 })
 router.get("/like/:id",isLoggedIn, async function(req,res,next){
@@ -107,7 +108,7 @@ router.get("/dashboard", isLoggedIn,async function(req,res,next){
     let user= await userModel.findOne({username:req.session.passport.user}).populate("library");
     let userMusic= await userModel.findOne({username:req.session.passport.user}).populate("recentSong");
     console.log(userMusic);
-    let music=await musicSchema.find().limit(1).populate("albumName");
+    let music=await musicSchema.find().limit(4).populate("albumName");
     let sponsored=await musicSchema.find().limit(1);
     let allAlbum=await album.find().limit(4).populate("mymusic");
     //  console.log(allAlbum);
@@ -205,8 +206,9 @@ router.get("/viewAllAlbum",isLoggedIn,function(req,res,next){
       message:"isme saari album dikhna ok"
     })
 })
-router.get("/albumUpload",isLoggedIn,function(req,res,next){
-    res.status(200).render("albumUpload");
+router.get("/albumUpload",isLoggedIn, async function(req,res,next){
+    let user=await userModel.findOne({username:req.session.passport.user});
+    res.status(200).render("albumUpload",{user:user});
 })
 router.post("/albumUpload",
 config.single("albumPoster"),isLoggedIn,async function(req,res,next){
@@ -225,7 +227,7 @@ router.get("/albumMusicUpload/:id",isLoggedIn, async function(req,res,next){
   let user=await userModel.findOne({username:req.session.passport.user});
   console.log(req.params.id);
   let id=req.params.id;
-  res.render("albumMusic",{id:id});
+  res.render("albumMusic",{id:id,user:user});
 });
 router.post("/UploadAlbumMusic/:id",isLoggedIn,config.array("file",2),async function(req,res,next){
     let myalbum=await album.findById(req.params.id);

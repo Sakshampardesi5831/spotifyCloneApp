@@ -34,11 +34,10 @@
               <th class="index">#</th>
               <th  class="mytitle">title</th>
               <th class="album">album</th>
-              <th class="uploaded">uploaded</th>
               <th></th>
               <th class="music_duration">play</th>
             </tr>
-              <% user.likeSongs.forEach(function(elem,index){%>
+              <% userLike.likeSongs.forEach(function(elem,index){%>
                 <tr id="row">
                     <td><%=index+1%></td>
                     <td class="music_poster_title">
@@ -48,7 +47,6 @@
                       </div>
                     </td>
                     <td><%=elem.songAlbum%></td>
-                    <td>Date</td>
                     <td><a href="" id="heart1"><i class="ri-heart-fill"></i></a></td>
                     <td><a href="/albumDetails/<%=elem._id%>" id="playMusicIcon"><i class="ri-play-fill"></i></a></td>
                 </tr>

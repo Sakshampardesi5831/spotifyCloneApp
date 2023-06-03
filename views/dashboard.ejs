@@ -115,17 +115,20 @@
       <h3>ALBUMS</h3>
       <a href="/viewAllAlbum">viewAll</a>
     </div>
-    <%allAlbum.forEach(function(elem){%>
-    <div class="albumPoster" title="get all songs">
-      <div class="albumImage">
-        <a href="/album/<%=elem._id%>">
-          <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="poster" />
-          <h4><%=elem.albumName%></h4>
-          <h4 id="subheading"><%=elem.albumCategory%></h4>
-        </a>
-      </div>
+    <div class="albumPoster_Wrapper">
+      <%allAlbum.forEach(function(elem){%>
+        <div class="albumPoster" title="click for all songs">
+            <div class="albumImage">
+              <a href="/album/<%=elem._id%>">
+                <img src="/audioPosterFile/<%=elem.albumPoster%>" alt="">
+              </a> 
+            </div>
+            <div class="albumLink">
+               <a href="/album/<%=elem._id%>"><%=elem.albumName%></a>
+            </div>
+        </div>
+      <%})%>
     </div>
-    <%})%>
   </div>
   <div class="dashboardOtherSection"></div>
 </div>

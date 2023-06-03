@@ -1,4 +1,3 @@
-
 const mongoose=require("mongoose");
 var plm=require("passport-local-mongoose");
 // mongoose.connect("mongodb://localhost/spotifyDb").then(function(){
